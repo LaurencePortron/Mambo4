@@ -1,1 +1,26 @@
-
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Sora', sans-serif;
+}
+header {
+}
+header > img {
+  height: 30%;
+  width: 100%;
+}
+.btn-menu {
+  display: block;
+}
+.btn-menu:hover {
+  cursor: pointer;
+}
+footer {
+  text-align: center;
+  font-size: 1rem;
+}
