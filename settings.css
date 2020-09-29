@@ -1,0 +1,73 @@
+* {
+  font-family: ‘Sora’, sans-serif;
+  font-weight: 1000;
+}
+
+.logo-mambo4 {
+  width: 100%;
+}
+
+.login {
+  border-radius: 20px;
+  background-color: #38548c;
+  text-align: center;
+  margin-bottom: 30px;
+  color: white;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 25px;
+}
+
+.change-login {
+  border: solid;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.parameters {
+  background-color: #c0392b;
+  border-radius: 20px;
+  color: white;
+  padding: 30px;
+  margin-bottom: 30px;
+  font-size: 25px;
+}
+
+.one-parameter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: solid;
+  border-radius: 20px;
+  margin-bottom: 5px;
+  padding: 5px;
+}
+
+.one-parameter:last-of-type {
+  margin-bottom: 0;
+}
+
+.switch {
+  width: 70px;
+}
+
+.sounds {
+  background-color: #47864a;
+  border-radius: 20px;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  padding-bottom: 25px;
+  font-size: 25px;
+}
+
+.emojis {
+  display: flex;
+  justify-content: space-around;
+}
+
+.emoji-cat,
+.emoji-music,
+.emoji-poo {
+  width: 50px;
+}
