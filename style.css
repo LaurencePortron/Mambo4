@@ -7,7 +7,6 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Sora', sans-serif;
-  overflow-x: none;
 }
 header {
 }
@@ -16,6 +15,7 @@ header > img {
   width: 100%;
 }
 main {
+  width: 100%;
   margin: 20px 0;
   height: 50%;
   z-index: 0;
@@ -23,31 +23,60 @@ main {
 .menu {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 .btn-menu {
-  width: 50%;
-  border-radius: 55px;
-  height: 150px;
+  width: 45%;
+  height: 175px;
+  margin: 20px 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 30px 0;
+  flex-direction: column;
+}
+.btn-menu > p {
+  padding: 10px;
+}
+#triangle {
+  width: 0;
+  height: 0;
+  border-top: 30px solid transparent;
+  border-bottom: 30px solid transparent;
+  border-left: 50px solid #47864a;
+  box-shadow: 0px 4px 4px #246d28;
+  border-radius: 6px;
+
+  box-sizing: border-box;
 }
 .btn-menu:nth-child(1) {
   background-color: #c0392b;
 }
+.btn-menu:nth-child(1) > p {
+  color: white;
+}
 .btn-menu:nth-child(2) {
   background-color: #38548c;
+}
+.btn-menu:nth-child(2) > p {
+  color: #fff9f9;
 }
 .btn-menu:nth-child(3) {
   background-color: #f1c40f;
 }
+.btn-menu:nth-child(3) > p {
+  color: #38548c;
+}
 .btn-menu:nth-child(4) {
   background-color: #47864a;
 }
+.btn-menu:nth-child(4) > p {
+  color: white;
+}
 .btn-menu:nth-child(n) {
+  border-radius: 55px 0 0 55px;
 }
 .btn-menu:nth-child(2n + 1) {
+  border-radius: 0 55px 55px 0;
 }
 footer {
   text-align: center;
