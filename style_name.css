@@ -1,0 +1,42 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Sora', sans-serif;
+}
+.sectionName {
+  width: 100%;
+  display: flex;
+  width: 300px;
+  border: solid 5px white;
+  background-color: #38548c;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  border-radius: 20px;
+  padding: 10px;
+}
+.sectionName > * {
+  padding: 10px;
+  margin: 5px;
+  color: white;
+}
+.sectionName > input[type='text'] {
+  color: black;
+}
+#nomJoueur {
+  width: 80%;
+}
+.sectionName > input[type='button'] {
+  width: 60%;
+  background-color: #c0392b;
+  box-sizing: border-box;
+  border-radius: 45px;
+  border-width: 0px;
+  font-weight: bold;
+}
