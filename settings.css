@@ -111,6 +111,7 @@ h2 {
 .contener-save {
   display: flex;
   justify-content: center;
+  margin-bottom: 30px;
 }
 
 .save {
@@ -203,5 +204,10 @@ h2 {
       margin-top: 0;
       width: 40%;
     }
+
+    .save{
+      padding: 5px 30px;
+    }
+    
   
   
