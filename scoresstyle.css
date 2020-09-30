@@ -1,10 +1,3 @@
-@media screen and (min-width: 900px) {
-  body {
-    display: flex;
-    justify-content: center;
-  }
-}
-
 body {
   background-color: #fffbfb;
 }
@@ -33,8 +26,6 @@ img {
 }
 
 .score_card {
-  display: flex;
-  flex-direction: column;
   height: 529px;
   border-radius: 24px;
   background-color: #38548c;
@@ -51,12 +42,10 @@ img {
   font-size: 24px;
   width: auto;
   height: 30px;
-  margin-top: 50px;
+  margin-top: 10px;
 }
 
 .highscore_case {
-  display: flex;
-  flex-direction: column;
   margin-right: 50px;
   margin-left: 50px;
   height: 40px;
@@ -78,8 +67,6 @@ img {
 }
 
 .score_case {
-  display: flex;
-  flex-direction: column;
   margin: 5px;
   margin-right: 50px;
   margin-left: 50px;
@@ -110,4 +97,19 @@ img {
 .menu_button:hover,
 .play_button:hover {
   opacity: 0.8;
+}
+
+@media screen and (min-width: 768px) {
+  .score_card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .highscore_desktop {
+    width: 100%;
+    align-self: center;
+  }
+  .scores_desktop {
+    width: 100%;
+  }
 }
