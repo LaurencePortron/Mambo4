@@ -3,11 +3,7 @@
   font-weight: 1000;
 }
 
-h1 {
-  font-size: 25px;
-}
-
-h2 {
+h1, h2 {
   font-size: 25px;
 }
 
@@ -30,6 +26,8 @@ h2 {
   font-size: 25px;
 }
 
+/* On fait disparaître l'élément portant la classe login-desktop qui sera utilisé dans les media queries */
+
 .login-desktop{
   display:none;
 }
@@ -43,11 +41,15 @@ h2 {
   margin: 0;
 }
 
-.change-login {
+.button-change-login {
   display: inline-block;
   border: solid;
   border-radius: 20px;
   padding: 10px;
+}
+
+.button-change-login:hover, .save:hover {
+  color : grey;
 }
 
 .parameters {
@@ -62,13 +64,14 @@ h2 {
   align-items: center;
 }
 
+/* On fait disparaître l'élément portant la classe parameters-desktop qui sera utilisé dans les media queries */
+
 .parameters-desktop {
   display: none;
 }
 
 .one-parameter {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   border: solid;
   border-radius: 20px;
@@ -106,6 +109,12 @@ h2 {
 .emoji-music,
 .emoji-poo {
   width: 50px;
+  padding: 5px;
+}
+
+.emoji-cat:hover, .emoji-music:hover, .emoji-poo:hover {
+  outline-style: solid;
+  outline-width: 3px;
 }
 
 .contener-save {
@@ -149,7 +158,11 @@ h2 {
 
     .login{
       display:none;
-    ;}
+    }
+
+    .login-desktop:hover{
+      color : grey;
+    }
 
     .login-desktop {
       display:block;
