@@ -11,8 +11,12 @@ h2 {
   font-size: 25px;
 }
 
+.header{
+  text-align: center;
+}
+
 .logo-mambo4 {
-  width: 100%;
+  width: 80%;
 }
 
 .login {
@@ -21,12 +25,22 @@ h2 {
   text-align: center;
   margin-bottom: 30px;
   color: white;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding-top: 30px;
+  padding-bottom: 30px;
   font-size: 25px;
 }
 
+.login p{
+  margin: 0;
+  margin-top: 25px;
+}
+
+.login-title{
+  margin: 0;
+}
+
 .change-login {
+  display: inline-block;
   border: solid;
   border-radius: 20px;
   padding: 10px;
@@ -39,6 +53,9 @@ h2 {
   padding: 30px;
   margin-bottom: 30px;
   font-size: 25px;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .one-parameter {
@@ -48,7 +65,8 @@ h2 {
   border: solid;
   border-radius: 20px;
   margin-bottom: 5px;
-  padding: 5px;
+  padding-left: 15px;
+  width: 70%;
 }
 
 .one-parameter:last-of-type {
@@ -57,6 +75,7 @@ h2 {
 
 .switch {
   width: 70px;
+  padding-right: 15px;
 }
 
 .sounds {
@@ -64,14 +83,15 @@ h2 {
   border-radius: 20px;
   color: white;
   text-align: center;
-  padding: 10px;
-  padding-bottom: 25px;
+  padding: 30px;
   font-size: 25px;
+  margin-bottom: 30px;
 }
 
 .emojis {
   display: flex;
   justify-content: space-around;
+  margin-top: 25px;
 }
 
 .emoji-cat,
@@ -79,3 +99,38 @@ h2 {
 .emoji-poo {
   width: 50px;
 }
+
+.contener-save {
+  display: flex;
+  justify-content: center;
+}
+
+.save {
+  background-color: #f1c40f;
+  border-radius: 24px;
+  color: #ffffff;
+  font-family: 'Sora', sans-serif;
+  font-size: 30px;
+  padding: 5px 15px;
+  margin: 0;
+}
+
+.choose-your-sounds{
+  margin: 0;
+}
+
+@media screen and (min-width: 768px) { 
+  body{
+    padding-left: 80px;
+    padding-right:80px;
+  }
+
+  .choose-your-sounds{
+    font-size: 35px;
+  }
+
+  .login-title{
+    font-size: 35px;
+  }
+  
+  
