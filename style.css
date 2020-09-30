@@ -63,7 +63,7 @@ main {
 }
 .btn-menu:nth-child(1) {
   background-color: #c0392b;
-  box-shadow: 3px 3px 2px 4px #a75047;
+  box-shadow: 3px 3px 2px 3px #a75047;
 }
 .btn-menu:nth-child(1) > p {
   color: white;
@@ -72,7 +72,7 @@ main {
   display: flex;
   flex-direction: row;
   background-color: #38548c;
-  box-shadow: -3px 3px 2px 4px #455473;
+  box-shadow: -3px 3px 2px 3px #455473;
 }
 .btn-menu:nth-child(2) > * {
   padding: 10px;
@@ -82,14 +82,14 @@ main {
 }
 .btn-menu:nth-child(3) {
   background-color: #f1c40f;
-  box-shadow: 3px 3px 2px 4px #d8b839;
+  box-shadow: 3px 3px 2px 3px #d8b839;
 }
 .btn-menu:nth-child(3) > p {
   color: #38548c;
 }
 .btn-menu:nth-child(4) {
   background-color: #47864a;
-  box-shadow: -3px 3px 2px 4px #246d28;
+  box-shadow: -3px 3px 2px 3px #246d28;
 }
 .btn-menu:nth-child(4) > p {
   color: white;
@@ -102,6 +102,7 @@ main {
 }
 .btn-menu:hover {
   cursor: pointer;
+  transform: scale(1.09);
 }
 #imgMambo,
 #imgSettings {
@@ -112,11 +113,19 @@ footer {
   text-align: center;
   font-size: 1rem;
   height: 20%;
-  padding: 30px;
+  padding: 20px;
 }
-footer > a:hover {
+.linkAboutUs {
+  color: #363535;
+  width: 100px;
+  padding: 20px;
+  border: groove 2px #363535;
+  border-radius: 50px;
+  font-weight: bold;
+}
+.linkAboutUs:hover {
   cursor: pointer;
-  text-decoration: underline;
+  transform: scale(1.09);
 }
 @media screen and (min-width: 800px) {
   header {

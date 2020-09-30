@@ -8,10 +8,11 @@ body {
   padding: 0;
   font-family: 'Sora', sans-serif;
 }
-/* .opaque {
-  opacity: 0.51;
+.opaque {
   z-index: 1;
+  opacity: 0.25;
 }
+/*
 .front {
   opacity: 1;
   z-index: 2;
@@ -20,7 +21,12 @@ h1 {
   text-align: center;
 }
 .sectionName {
-  z-index: 1;
+  visibility: hidden;
+  opacity: 1;
+  position: absolute;
+  z-index: 2;
+  top: 200px;
+  left: 60px;
   width: 100%;
   display: flex;
   width: 300px;
@@ -32,6 +38,10 @@ h1 {
   text-align: center;
   border-radius: 20px;
   padding: 10px;
+}
+
+.front {
+  visibility: visible;
 }
 .sectionName > * {
   padding: 10px;
