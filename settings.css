@@ -30,6 +30,10 @@ h2 {
   font-size: 25px;
 }
 
+.login-desktop{
+  display:none;
+}
+
 .login p{
   margin: 0;
   margin-top: 25px;
@@ -56,6 +60,10 @@ h2 {
   display:flex;
   flex-direction: column;
   align-items: center;
+}
+
+.parameters-desktop {
+  display: none;
 }
 
 .one-parameter {
@@ -132,5 +140,68 @@ h2 {
   .login-title{
     font-size: 35px;
   }
+
+  @media screen and (min-width: 1200px) { 
+    .logo-mambo4 {
+      width: 50%;
+    }
+
+    .login{
+      display:none;
+    ;}
+
+    .login-desktop {
+      display:block;
+      border-radius: 20px;
+      background-color: #38548c;
+      text-align: center;
+      margin-bottom: 30px;
+      color: white;
+      padding-top: 30px;
+      padding-bottom: 30px;
+      font-size: 25px;
+    }
+
+    .parameters{
+      display:none;
+    }
+
+    .parameters-desktop {
+      display:flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      background-color: #c0392b;
+      border-radius: 20px;
+      color: white;
+      padding: 30px;
+      margin-bottom: 30px;
+      font-size: 25px;
+    }
+
+    .one-parameter:nth-child(2n){
+      margin-right: 0;
+    }
+
+    .one-parameter{
+      display: flex;
+      justify-content: space-between;
+      width: 45%;
+      margin-right: 20px;
+    }
+
+    .one-parameter:last-of-type {
+      margin-bottom: 5px;
+    }
+  
+    .sounds{
+      display:flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    .emojis{
+      margin-top: 0;
+      width: 40%;
+    }
   
   
