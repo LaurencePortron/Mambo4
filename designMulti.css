@@ -1,0 +1,133 @@
+body {
+  font-family: 'Sora', sans-serif;
+  margin: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+#triangle {
+  width: 0;
+  height: 0;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-right: 20px solid #47864a;
+  border-radius: 6px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+img {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+h1 {
+  margin-bottom: 30px;
+}
+
+.touchUp,
+.touchDown {
+  display: flex;
+  flex-direction: row;
+}
+
+.carreRouge {
+  float: left;
+  width: 50%;
+  height: 250px;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  background-color: #c0392b;
+  cursor: pointer;
+}
+
+.carreBleu {
+  float: right;
+  width: 50%;
+  height: 250px;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  background-color: #38548c;
+  cursor: pointer;
+}
+
+.carreJaune {
+  float: left;
+  width: 50%;
+  height: 250px;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  background-color: #f1c40f;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.carreVert {
+  float: right;
+  width: 50%;
+  height: 250px;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  background-color: #47864a;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.carreRouge:hover,
+.carreBleu:hover,
+.carreJaune:hover,
+.carreVert:hover {
+  opacity: 0.7;
+}
+
+.scores {
+  font-weight: bold;
+  background-color: #ffe0c8;
+  margin-bottom: 20px;
+}
+
+.whoPlayer {
+  text-align: center;
+  color: #38548c;
+}
+.player1,
+.player2,
+.score1,
+.score2 {
+  padding: 2px;
+  display: flex;
+  justify-content: space-around;
+}
+
+@media screen and (min-width: 768px) {
+  .img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .carreRouge,
+  .carreJaune {
+    margin-left: 50px;
+    border-radius: 50px 50px;
+  }
+
+  .carreBleu,
+  .carreVert {
+    margin-right: 50px;
+    border-radius: 50px 50px;
+  }
+
+  .carreJaune,
+  .carreVert {
+    margin-bottom: 90px;
+  }
+
+  .theScore {
+    font-size: 20px;
+  }
+}
