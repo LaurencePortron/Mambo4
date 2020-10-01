@@ -30,7 +30,7 @@ nav ul li{
     list-style : none;
     position: fixed;
     right: 2.5%;
-    top: 1%;
+    top: 4%;
     z-index: 2;
 }
 
@@ -44,10 +44,11 @@ li a{
     color: black;
 }
 
-li button:hover{
-    box-shadow: 5px 5px 8px #f1c40f;
+li a:hover{
+    box-shadow: 7px 7px 8px #f1c40f;
     cursor: pointer;
     transform: scale(.95);
+    border : 3px solid black;
     
 }
 
@@ -144,11 +145,12 @@ article h2{
 
 
 article img{
-    object-fit: contain;
+    height: 100%;
     margin-top: 10%;
     margin-bottom: 10%;
     margin-left: 8%;
     margin-right: 8%;
+    border-radius: 90px;
 }
 
 @media screen and (max-width: 600px){ /*Smartphone*/
@@ -167,8 +169,11 @@ article img{
     article:nth-child(2n) {
         flex-direction: row-reverse;
     }
-    li butaton{
+    li a{
         padding: 22px 35px 22px 35px;
+    }
+    article img{
+        width: 200px;
     }
 }
 
@@ -178,6 +183,9 @@ article img{
     }
     li a{
         padding: 30px 100px 30px 100px;
+    }
+    article img{
+        width: 300px;
     }
 }
 
