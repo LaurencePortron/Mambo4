@@ -27,12 +27,13 @@ img {
 }
 
 .score_card {
-  height: 529px;
+  height: auto;
+
   border-radius: 24px;
   background-color: #38548c;
   border-style: solid;
   border-color: #47864a;
-  border-width: 20px;
+  border-width: 10px;
 }
 
 .highscore {
@@ -42,7 +43,7 @@ img {
   font-family: 'Sora', sans-serif;
   font-size: 24px;
   width: auto;
-  height: 30px;
+  height: auto;
   margin-top: 10px;
 }
 
@@ -63,8 +64,7 @@ img {
   font-family: 'Sora', sans-serif;
   font-size: 24px;
   width: auto;
-  height: 30px;
-  margin-top: 50px;
+  height: auto;
 }
 
 .score_case {
@@ -76,6 +76,7 @@ img {
 
   background-color: grey;
   opacity: 0.3;
+  margin-bottom: 10px;
 }
 .menu {
   display: flex;
