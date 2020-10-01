@@ -19,6 +19,7 @@ body {
   border-color: #c0392b;
   cursor: pointer;
   outline: none;
+  text-decoration: none;
 }
 
 img {
@@ -95,6 +96,7 @@ img {
   border-color: #f1c40f;
   cursor: pointer;
   outline: none;
+  text-decoration: none;
 }
 .menu_button:hover,
 .play_button:hover {
