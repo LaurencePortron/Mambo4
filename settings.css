@@ -1,0 +1,272 @@
+* {
+  font-family: ‘Sora’, sans-serif;
+  font-weight: 1000;
+}
+
+h1, h2 {
+  font-size: 25px;
+}
+
+.header{
+  text-align: center;
+}
+
+.logo-mambo4 {
+  width: 80%;
+}
+
+.login {
+  border-radius: 20px;
+  background-color: #38548c;
+  text-align: center;
+  margin-bottom: 30px;
+  color: white;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  font-size: 25px;
+}
+
+/* On fait disparaître l'élément portant la classe login-desktop qui sera utilisé dans les media queries */
+
+.login-desktop{
+  display:none;
+}
+
+.login p{
+  margin: 0;
+  margin-top: 25px;
+}
+
+.login-title{
+  margin: 0;
+}
+
+.button-change-login {
+  display: inline-block;
+  border: solid;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.button-change-login:hover, .save:hover {
+  transform: scale(0.90);
+  cursor: pointer;
+}
+
+.parameters {
+  background-color: #c0392b;
+  border-radius: 20px;
+  color: white;
+  padding: 30px;
+  margin-bottom: 30px;
+  font-size: 25px;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* On fait disparaître l'élément portant la classe parameters-desktop qui sera utilisé dans les media queries */
+
+.parameters-desktop {
+  display: none;
+}
+
+.one-parameter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: solid;
+  border-radius: 20px;
+  margin-bottom: 5px;
+  padding-left: 15px;
+  width: 70%;
+}
+
+.one-parameter:last-of-type {
+  margin-bottom: 0;
+}
+
+input[type=checkbox]{
+	height: 0;
+	width: 0;
+	visibility: hidden;
+}
+
+label {
+	cursor: pointer;
+	text-indent: -9999px;
+	width: 60px;
+	height: 30px;
+	background: grey;
+	display: block;
+	border-radius: 100px;
+  position: relative;
+  margin-right: 15px;
+}
+
+label:after {
+	content: '';
+	position: absolute;
+	top: 2px;
+	left: 5px;
+	width: 25px;
+	height: 25px;
+	background: #fff;
+	border-radius: 90px;
+	transition: 0.3s;
+}
+
+input:checked + label {
+	background: #f1c40f;
+}
+
+input:checked + label:after {
+	left: calc(100% - 5px);
+	transform: translateX(-100%);
+}
+
+label:active:after {
+	width: 45px;
+}
+
+.sounds {
+  background-color: #47864a;
+  border-radius: 20px;
+  color: white;
+  text-align: center;
+  padding: 30px;
+  font-size: 25px;
+  margin-bottom: 30px;
+}
+
+.emojis {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 25px;
+}
+
+.emoji-cat,
+.emoji-music,
+.emoji-poo {
+  width: 50px;
+  padding: 5px;
+}
+
+.emoji-cat:hover, .emoji-music:hover, .emoji-poo:hover {
+  transform: scale(0.90);
+  cursor: pointer;
+}
+
+.contener-save {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.save {
+  background-color: #f1c40f;
+  border-radius: 24px;
+  color: #ffffff;
+  font-family: 'Sora', sans-serif;
+  font-size: 30px;
+  padding: 5px 15px;
+  margin: 0;
+}
+
+.save-link{
+  text-decoration: none;
+}
+
+.choose-your-sounds{
+  margin: 0;
+}
+
+@media screen and (min-width: 768px) { 
+  body{
+    padding-left: 80px;
+    padding-right:80px;
+  }
+
+  .choose-your-sounds{
+    font-size: 35px;
+  }
+
+  .login-title{
+    font-size: 35px;
+  }
+
+  @media screen and (min-width: 1200px) { 
+    .logo-mambo4 {
+      width: 50%;
+    }
+
+    .login{
+      display:none;
+    }
+
+    .login-desktop:hover{
+      transform: scale(0.97);
+      cursor:pointer;
+    }
+
+    .login-desktop {
+      display:block;
+      border-radius: 20px;
+      background-color: #38548c;
+      text-align: center;
+      margin-bottom: 30px;
+      color: white;
+      padding-top: 30px;
+      padding-bottom: 30px;
+      font-size: 25px;
+    }
+
+    .parameters{
+      display:none;
+    }
+
+    .parameters-desktop {
+      display:flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      background-color: #c0392b;
+      border-radius: 20px;
+      color: white;
+      padding: 30px;
+      margin-bottom: 30px;
+      font-size: 25px;
+    }
+
+    .one-parameter:nth-child(2n){
+      margin-right: 0;
+    }
+
+    .one-parameter{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 45%;
+      margin-right: 20px;
+    }
+
+    .one-parameter:last-of-type {
+      margin-bottom: 5px;
+    }
+  
+    .sounds{
+      display:flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    .emojis{
+      margin-top: 0;
+      width: 40%;
+    }
+
+    .save{
+      padding: 5px 30px;
+    }
+    
+  
+  
