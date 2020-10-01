@@ -82,7 +82,7 @@ h1 {
 .carreBleu:hover,
 .carreJaune:hover,
 .carreVert:hover {
-  opacity: 0.7;
+  opacity: 0.8;
 }
 
 .scores {
@@ -92,6 +92,7 @@ h1 {
 }
 
 .whoPlayer {
+  padding: 5px;
   text-align: center;
   color: #38548c;
 }
@@ -99,9 +100,8 @@ h1 {
 .player2,
 .score1,
 .score2 {
-  padding: 2px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 
 @media screen and (min-width: 768px) {
