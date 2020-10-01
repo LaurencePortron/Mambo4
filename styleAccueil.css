@@ -123,7 +123,8 @@ a {
   border: groove 2px #363535;
   border-radius: 50px;
   font-weight: bold;
-  font-size: 1em;
+  font-size: 0.8em;
+  text-align: center;
 }
 .linkAboutUs:hover {
   cursor: pointer;
