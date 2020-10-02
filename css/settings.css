@@ -16,7 +16,7 @@ h1, h2 {
 }
 
 .login {
-  border-radius: 20px;
+  border-radius: 24px;
   background-color: #38548c;
   text-align: center;
   margin-bottom: 30px;
@@ -46,7 +46,7 @@ h1, h2 {
 .button-change-login {
   display: inline-block;
   border: solid;
-  border-radius: 20px;
+  border-radius: 24px;
   padding: 10px;
 }
 
@@ -57,7 +57,7 @@ h1, h2 {
 
 .parameters {
   background-color: #c0392b;
-  border-radius: 20px;
+  border-radius: 24px;
   color: white;
   padding: 30px;
   margin-bottom: 30px;
@@ -72,7 +72,7 @@ h1, h2 {
   justify-content: space-between;
   align-items: center;
   border: solid;
-  border-radius: 20px;
+  border-radius: 24px;
   margin-bottom: 5px;
   padding-left: 15px;
   width: 70%;
@@ -127,7 +127,7 @@ label:active:after {
 
 .sounds {
   background-color: #47864a;
-  border-radius: 20px;
+  border-radius: 24px;
   color: white;
   text-align: center;
   padding: 30px;
@@ -156,17 +156,22 @@ label:active:after {
 .contener-save {
   display: flex;
   justify-content: center;
-  margin-bottom: 30px;
+  
+ 
 }
 
 .save {
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 10px;
   background-color: #f1c40f;
   border-radius: 24px;
   color: #ffffff;
   font-family: 'Sora', sans-serif;
   font-size: 30px;
-  padding: 5px 15px;
-  margin: 0;
+  border-color: #f1c40f;
+  cursor: pointer;
+  outline: none;
 }
 
 .save-link{
@@ -200,7 +205,7 @@ label:active:after {
       transform: scale(0.97);
       cursor:pointer;
     }
-
+    
     .login-title-desktop{
       display:inline;
       margin:0;
@@ -220,7 +225,7 @@ label:active:after {
       justify-content: center;
       flex-wrap: wrap;
       background-color: #c0392b;
-      border-radius: 20px;
+      border-radius: 24px;
       color: white;
       padding: 30px;
       margin-bottom: 30px;
