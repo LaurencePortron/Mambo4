@@ -20,20 +20,23 @@
     </header>
 
     <section class="login">
-      <h1 class="login-title">You're logged in as anonymous</h1>
-      <p class="button-change-login">Change</p>
-    </section>
-
-    <section class="login-desktop">
-      <h1 class="login-title">
-        Welcome anonymous! Not you? Change your pseudo here!
+      
+      <h1>
+        <span class="login-title"> You're logged as </span>
+        <span class="login-title-desktop"> Welcome </span>
+        <span class="current-login">anonymous</span>
+        <span class="login-title-desktop">
+          ! Not you ? Change your pseudo here !
+        </span>
       </h1>
+      <p class="button-change-login">Change</p>
+      
     </section>
 
     <section class="parameters">
       <div class="one-parameter">
         <h2>Sounds</h2>
-        <input type="checkbox" id="switch-sounds" />
+        <input type="checkbox" id="switch-sounds" checked />
         <label for="switch-sounds">Toggle</label>
       </div>
       <div class="one-parameter">
@@ -53,37 +56,6 @@
       </div>
     </section>
 
-    <section class="parameters-desktop">
-      <div class="one-parameter">
-        <h2>Sounds</h2>
-        <input type="checkbox" id="switch-sounds-desktop" /><label
-          for="switch-sounds-desktop"
-          >Toggle</label
-        >
-      </div>
-      <div class="one-parameter">
-        <h2>Chrono</h2>
-        <input type="checkbox" id="switch-chrono-desktop" /><label
-          for="switch-chrono-desktop"
-          >Toggle</label
-        >
-      </div>
-      <div class="one-parameter">
-        <h2>Hard mode</h2>
-        <input type="checkbox" id="switch-hardmode-desktop" /><label
-          for="switch-hardmode-desktop"
-          >Toggle</label
-        >
-      </div>
-      <div class="one-parameter">
-        <h2>Increase speed</h2>
-        <input type="checkbox" id="switch-speed-desktop" /><label
-          for="switch-speed-desktop"
-          >Toggle</label
-        >
-      </div>
-    </section>
-
     <section class="sounds">
       <h2 class="choose-your-sounds">Wanna choose your sounds ?</h2>
       <div class="emojis">
@@ -96,5 +68,6 @@
     <section class="contener-save">
       <a class="save-link" href="index.html"><h2 class="save">SAVE</h2></a>
     </section>
+    <script src="../js/settings.js"></script>
   </body>
 </html>

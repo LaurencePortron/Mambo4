@@ -26,8 +26,6 @@ h1, h2 {
   font-size: 25px;
 }
 
-/* On fait disparaître l'élément portant la classe login-desktop qui sera utilisé dans les media queries */
-
 .login-desktop{
   display:none;
 }
@@ -39,6 +37,10 @@ h1, h2 {
 
 .login-title{
   margin: 0;
+}
+
+.login-title-desktop{
+  display:none;
 }
 
 .button-change-login {
@@ -63,12 +65,6 @@ h1, h2 {
   display:flex;
   flex-direction: column;
   align-items: center;
-}
-
-/* On fait disparaître l'élément portant la classe parameters-desktop qui sera utilisé dans les media queries */
-
-.parameters-desktop {
-  display: none;
 }
 
 .one-parameter {
@@ -205,33 +201,27 @@ label:active:after {
       width: 50%;
     }
 
-    .login{
-      display:none;
-    }
-
     .login-desktop:hover{
       transform: scale(0.97);
       cursor:pointer;
     }
-
-    .login-desktop {
-      display:block;
-      border-radius: 24px;
-      background-color: #38548c;
-      text-align: center;
-      margin-bottom: 30px;
-      color: white;
-      padding-top: 30px;
-      padding-bottom: 30px;
-      font-size: 25px;
+    
+    .login-title-desktop{
+      display:inline;
+      margin:0;
     }
 
-    .parameters{
+    .login-title{
       display:none;
     }
 
-    .parameters-desktop {
+    .button-change-login{
+      display:none;
+    }
+
+    .parameters{
       display:flex;
+      flex-direction: row;
       justify-content: center;
       flex-wrap: wrap;
       background-color: #c0392b;
