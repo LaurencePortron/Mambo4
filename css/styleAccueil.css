@@ -64,7 +64,7 @@ a {
 }
 .btn-menuAccueil:nth-child(1) {
   background-color: #c0392b;
-  box-shadow: #a75047;
+  box-shadow: 3px 3px 2px 4px #a75047;
 }
 .btn-menuAccueil:nth-child(1) > p {
   color: white;
@@ -73,7 +73,7 @@ a {
   display: flex;
   flex-direction: row;
   background-color: #38548c;
-  box-shadow: #455473;
+  box-shadow: -3px 3px 2px 4px #455473;
 }
 .btn-menuAccueil:nth-child(2) > * {
   padding: 10px;
@@ -83,14 +83,14 @@ a {
 }
 .btn-menuAccueil:nth-child(3) {
   background-color: #f1c40f;
-  box-shadow: #d8b839;
+  box-shadow: 3px 3px 2px 4px #d8b839;
 }
 .btn-menuAccueil:nth-child(3) > p {
   color: white;
 }
 .btn-menuAccueil:nth-child(4) {
   background-color: #47864a;
-  box-shadow: #246d28;
+  box-shadow: -3px 3px 2px 4px #246d28;
 }
 .btn-menuAccueil:nth-child(4) > p {
   color: white;
