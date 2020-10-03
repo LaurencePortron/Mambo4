@@ -1,74 +1,63 @@
-// Initialisation des variables
+// Variable initialization
 
 const carreRouge = document.querySelector('.carreRouge');
 const carreBleu = document.querySelector('.carreBleu');
 const carreJaune = document.querySelector('.carreJaune');
 const carreVert = document.querySelector('.carreVert');
+// on crée l'array stockant toutes les couleurs possibles
+const colorArray = ['.carreRouge', '.carreBleu', '.carreJaune', '.carreVert'];
+// on crée l'array qui va nous permettre de stocker la séquence de couleurs
 const sequence = [];
 
-// Création des fonctions
+// Functions
 
-function randomInteger(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
+// fonction permettant de diminuer l'opacité du carré
 function addOpacity(square) {
   square.style.opacity = '0.7';
 }
 
+// fonction permettant d'augmenter l'opacité du carré
 function removeOpacity(square) {
   square.style.opacity = '1';
-} 
-
-function
-
-// Fonction principale
-
-function main() {
-  const currentRandomInteger = randomInteger(1, 4);
-  console.log(currentRandomInteger);
-
-  if (currentRandomInteger === 1) {
-    addOpacity(carreRouge);
-    setTimeout(function () {
-      removeOpacity(carreRouge);
-    }, 2000);
-  } else if (currentRandomInteger === 2) {
-    addOpacity(carreBleu);
-    setTimeout(function () {
-      removeOpacity(carreBleu);
-    }, 2000);
-  } else if (currentRandomInteger === 3) {
-    addOpacity(carreJaune);
-    setTimeout(function () {
-      removeOpacity(carreJaune);
-    }, 2000);
-  } else if (currentRandomInteger === 4) {
-    addOpacity(carreVert);
-    setTimeout(function () {
-      removeOpacity(carreVert);
-    }, 2000);
-  } else null;
-
-  sequence.push(currentRandomInteger);
 }
 
-// Lancement du jeu
+// fonction permettant de changer le "watch" en "play" et vice-versa
+function modifyWatchPlay(value) {
+  const watchAndPlay = document.querySelector('.watch-and-play');
+  watchAndPlay.innerHTML = value;
+}
 
-setTimeout(main, 5000);
+// fonction permettant d'écouter le clic sur un élément
+function clickVerification(value) {
+  value.addEventListener('click', function () {
+    console.log('Well done !');
+  });
+}
 
+// Main function
 
-// const carreRouge = document.querySelector('.carreRouge');
+function main() {
+  // On choisit une couleur au hasard dans l'array des couleurs
+  let currentIndexColor = Math.floor(Math.random() * colorArray.length);
+  let currentColor = colorArray[currentIndexColor];
 
-// console.log(carreRouge);
+  console.log(currentColor);
 
-// function modifyOpacity() {
-//   carreRouge.style.opacity = '0.7';
-// }
+  // on diminue l'opacité puis on l'augmente x secondes plus tard
 
-// function removeOpacity() {
-//   carreRouge.style.opacity = '1';
-// }
+  addOpacity(document.querySelector(currentColor));
+  setTimeout(function () {
+    removeOpacity(document.querySelector(currentColor));
+  }, 2000);
 
-// modifyOpacity();
-// setTimeout(removeOpacity, 2000);
+  //On envoie la couleur courante dans l'array sequence
+  sequence.push(currentColor);
+  console.log(sequence);
+}
+
+///// Lancement du jeu
+
+setTimeout(main, 3000);
+setTimeout(function () {
+  modifyWatchPlay('PLAY !');
+}, 6000);
