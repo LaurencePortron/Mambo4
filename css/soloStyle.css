@@ -78,13 +78,6 @@ h1 {
   margin-bottom: 40px;
 }
 
-.carreRouge:hover,
-.carreBleu:hover,
-.carreJaune:hover,
-.carreVert:hover {
-  opacity: 0.7;
-}
-
 .theScore {
   display: flex;
   justify-content: center;

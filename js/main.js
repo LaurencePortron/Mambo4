@@ -1,63 +1,159 @@
-// Variable initialization
+// Variables
 
+let order = []; // on va stocker dans cette variable la séquence de 20 couleurs
+let playerOrder = []; // liste des couleurs sur lesquelles le joueur a cliqué
+let flash; // nombre de couleurs qui se sont allumées
+let turn; // tour actuel
+let good; // retourne true ou false en fonction du clic du joueur
+let compTurn; // retourner true ou false si c'est le tour de l'algo ou du joueur
+let intervalID;
+let win = false; // retourne si le joueur a gagné ou non
+
+const score = document.querySelector('.score');
 const carreRouge = document.querySelector('.carreRouge');
 const carreBleu = document.querySelector('.carreBleu');
 const carreJaune = document.querySelector('.carreJaune');
 const carreVert = document.querySelector('.carreVert');
-// on crée l'array stockant toutes les couleurs possibles
-const colorArray = ['.carreRouge', '.carreBleu', '.carreJaune', '.carreVert'];
-// on crée l'array qui va nous permettre de stocker la séquence de couleurs
-const sequence = [];
+const watchOrPlay = document.querySelector('.watch-and-play');
 
-// Functions
+function play() {
+  win = false;
+  order = [];
+  playerOrder = [];
+  flash = 0;
+  intervalID = 0;
+  turn = 1;
+  score.innerHTML = 'SCORE : 0';
+  good = true;
+  for (let i = 0; i < 20; i++) {
+    order.push(Math.floor(Math.random() * 4) + 1);
+  }
+  compTurn = true;
 
-// fonction permettant de diminuer l'opacité du carré
-function addOpacity(square) {
-  square.style.opacity = '0.7';
+  intervalID = setInterval(gameTurn, 800);
 }
 
-// fonction permettant d'augmenter l'opacité du carré
-function removeOpacity(square) {
-  square.style.opacity = '1';
+function gameTurn() {
+  if (flash == turn) {
+    clearInterval(intervalID);
+    compTurn = false;
+    clearColor();
+  }
+
+  if (compTurn) {
+    clearColor();
+    setTimeout(() => {
+      if (order[flash] == 1) rouge();
+      if (order[flash] == 2) bleu();
+      if (order[flash] == 3) jaune();
+      if (order[flash] == 4) vert();
+      flash++;
+    }, 200);
+    watchOrPlay.innerHTML = 'PLAY !';
+  }
 }
 
-// fonction permettant de changer le "watch" en "play" et vice-versa
-function modifyWatchPlay(value) {
-  const watchAndPlay = document.querySelector('.watch-and-play');
-  watchAndPlay.innerHTML = value;
+function rouge() {
+  carreRouge.style.opacity = '0.7';
 }
 
-// fonction permettant d'écouter le clic sur un élément
-function clickVerification(value) {
-  value.addEventListener('click', function () {
-    console.log('Well done !');
-  });
+function bleu() {
+  carreBleu.style.opacity = '0.7';
 }
 
-// Main function
-
-function main() {
-  // On choisit une couleur au hasard dans l'array des couleurs
-  let currentIndexColor = Math.floor(Math.random() * colorArray.length);
-  let currentColor = colorArray[currentIndexColor];
-
-  console.log(currentColor);
-
-  // on diminue l'opacité puis on l'augmente x secondes plus tard
-
-  addOpacity(document.querySelector(currentColor));
-  setTimeout(function () {
-    removeOpacity(document.querySelector(currentColor));
-  }, 2000);
-
-  //On envoie la couleur courante dans l'array sequence
-  sequence.push(currentColor);
-  console.log(sequence);
+function jaune() {
+  carreJaune.style.opacity = '0.7';
 }
 
-///// Lancement du jeu
+function vert() {
+  carreVert.style.opacity = '0.7';
+}
 
-setTimeout(main, 3000);
-setTimeout(function () {
-  modifyWatchPlay('PLAY !');
-}, 6000);
+function clearColor() {
+  carreVert.style.opacity = '1';
+  carreJaune.style.opacity = '1';
+  carreBleu.style.opacity = '1';
+  carreRouge.style.opacity = '1';
+}
+
+carreRouge.addEventListener('click', (event) => {
+  playerOrder.push(1);
+  check();
+  rouge();
+  if (!win) {
+    setTimeout(() => {
+      clearColor();
+    }, 300);
+  }
+});
+
+carreBleu.addEventListener('click', (event) => {
+  playerOrder.push(2);
+  check();
+  bleu();
+  if (!win) {
+    setTimeout(() => {
+      clearColor();
+    }, 300);
+  }
+});
+
+carreJaune.addEventListener('click', (event) => {
+  playerOrder.push(3);
+  check();
+  jaune();
+  if (!win) {
+    setTimeout(() => {
+      clearColor();
+    }, 300);
+  }
+});
+
+carreVert.addEventListener('click', (event) => {
+  playerOrder.push(4);
+  check();
+  vert();
+  if (!win) {
+    setTimeout(() => {
+      clearColor();
+    }, 300);
+  }
+});
+
+function check() {
+  if (playerOrder[playerOrder.length - 1] !== order[playerOrder.length - 1]) {
+    good = false;
+  }
+
+  if (playerOrder.length == 20 && good) {
+    winGame();
+  }
+
+  if (good == false) {
+    watchOrPlay.innerHTML = 'WRONG !';
+    setTimeout(() => {
+      watchOrPlay.innerHTML = 'WATCH !';
+    }, 800);
+    compTurn = true;
+    flash = 0;
+    playerOrder = [];
+    good = true;
+    intervalID = setInterval(gameTurn, 800);
+  }
+
+  if (turn == playerOrder.length && good && !win) {
+    turn++;
+    playerOrder = [];
+    compTurn = true;
+    flash = 0;
+    score.innerHTML = turn * 10 - 10;
+    intervalID = setInterval(gameTurn, 800);
+  }
+}
+
+function winGame() {
+  watchOrPlay.innerHTML = 'YOU WIN !';
+  win = true;
+}
+
+play();
