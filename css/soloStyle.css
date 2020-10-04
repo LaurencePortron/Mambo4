@@ -28,6 +28,7 @@ img {
 
 h1 {
   margin-bottom: 30px;
+  text-align: center;
 }
 
 .touchUp,
@@ -88,6 +89,20 @@ h1 {
 
 .score {
   padding-right: 20px;
+}
+
+.start {
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 10px;
+  background-color: #f1c40f;
+  border-radius: 24px;
+  color: #ffffff;
+  font-family: 'Sora', sans-serif;
+  font-size: 30px;
+  border-color: #f1c40f;
+  cursor: pointer;
+  outline: none;
 }
 
 @media screen and (min-width: 768px) {

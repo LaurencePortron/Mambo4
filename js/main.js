@@ -2,12 +2,12 @@
 
 let order = []; // on va stocker dans cette variable la séquence de 20 couleurs
 let playerOrder = []; // liste des couleurs sur lesquelles le joueur a cliqué
-let flash; // nombre de couleurs qui se sont allumées
-let turn; // tour actuel
-let good; // retourne true ou false en fonction du clic du joueur
-let compTurn; // retourner true ou false si c'est le tour de l'algo ou du joueur
-let intervalID;
-let win = false; // retourne si le joueur a gagné ou non
+let nbCompTurn; // nombre de tour qu'a joué l'ordinateur
+let nbUserTurn; // tour actuel
+let good; // retourne true ou false si le joueur clique sur la bonne ou la mauvaise couleur
+let compTurn; // true si c'est au tour de l'ordinateur
+let interval;
+let win; // si true, le joueur a gagné
 
 const score = document.querySelector('.score');
 const carreRouge = document.querySelector('.carreRouge');
@@ -15,41 +15,53 @@ const carreBleu = document.querySelector('.carreBleu');
 const carreJaune = document.querySelector('.carreJaune');
 const carreVert = document.querySelector('.carreVert');
 const watchOrPlay = document.querySelector('.watch-and-play');
+const startButton = document.querySelector('.start');
+
+// création d'un écouteur, déclenchant le jeu par un clic sur le bouton start
+
+startButton.addEventListener('click', (event) => {
+  play();
+});
+
+// fonction permettant d'initialiser le jeu
 
 function play() {
-  win = false;
-  order = [];
-  playerOrder = [];
-  flash = 0;
-  intervalID = 0;
-  turn = 1;
-  score.innerHTML = 'SCORE : 0';
-  good = true;
+  win = false; // en cas de nouveau jeu après une victoire, on remet la variable win à fausse
+  order = []; // idem, on vide le tableau order
+  playerOrder = []; // on vide également le tableau playerOrder
+  nbCompTurn = 0; // l'ordinateur n'a pas joué, donc variable = 0
+  interval = 0;
+  nbUserTurn = 1; // on initialise le nb de tours de joueurs à 1
+  score.innerHTML = 'SCORE : 0'; // on remet le score à 0
+  good = true; // on remet good à true si le joueur avait fait une erreur
+
   for (let i = 0; i < 20; i++) {
+    // cette boucle va créer un tableau de 20 chiffres compris entre 1 et 4
     order.push(Math.floor(Math.random() * 4) + 1);
   }
-  compTurn = true;
-
-  intervalID = setInterval(gameTurn, 800);
+  compTurn = true; // on indique que c'est le tour de l'ordinateur
+  interval = setInterval(gameTurn, 800);
 }
+// cette foncton permet de créer le tour de jeu
 
 function gameTurn() {
-  if (flash == turn) {
-    clearInterval(intervalID);
-    compTurn = false;
-    clearColor();
+  if (nbCompTurn == nbUserTurn) {
+    // on compare le nb de tours de l'utilisateur à celui de l'ordinateur
+    clearInterval(interval); // on stoppe la fonction
+    compTurn = false; // on indique que ce n'est pas le tour de l'ordinateur
+    clearColor(); // on éteint les couleurs
   }
 
   if (compTurn) {
-    clearColor();
+    // on vérifie que ce soit le tour de l'ordinateur
+    clearColor(); // on éteint les couleurs
     setTimeout(() => {
-      if (order[flash] == 1) rouge();
-      if (order[flash] == 2) bleu();
-      if (order[flash] == 3) jaune();
-      if (order[flash] == 4) vert();
-      flash++;
+      if (order[nbCompTurn] == 1) rouge(); // si dans la séquence, le 1er chiffre est un 1 on allume le rouge au bout de 200mS
+      if (order[nbCompTurn] == 2) bleu();
+      if (order[nbCompTurn] == 3) jaune();
+      if (order[nbCompTurn] == 4) vert();
+      nbCompTurn++; // on augmente le nombre de tour de l'ordinateur
     }, 200);
-    watchOrPlay.innerHTML = 'PLAY !';
   }
 }
 
@@ -80,44 +92,36 @@ carreRouge.addEventListener('click', (event) => {
   playerOrder.push(1);
   check();
   rouge();
-  if (!win) {
-    setTimeout(() => {
-      clearColor();
-    }, 300);
-  }
+  setTimeout(() => {
+    clearColor();
+  }, 300);
 });
 
 carreBleu.addEventListener('click', (event) => {
   playerOrder.push(2);
   check();
   bleu();
-  if (!win) {
-    setTimeout(() => {
-      clearColor();
-    }, 300);
-  }
+  setTimeout(() => {
+    clearColor();
+  }, 300);
 });
 
 carreJaune.addEventListener('click', (event) => {
   playerOrder.push(3);
   check();
   jaune();
-  if (!win) {
-    setTimeout(() => {
-      clearColor();
-    }, 300);
-  }
+  setTimeout(() => {
+    clearColor();
+  }, 300);
 });
 
 carreVert.addEventListener('click', (event) => {
   playerOrder.push(4);
   check();
   vert();
-  if (!win) {
-    setTimeout(() => {
-      clearColor();
-    }, 300);
-  }
+  setTimeout(() => {
+    clearColor();
+  }, 300);
 });
 
 function check() {
@@ -130,24 +134,25 @@ function check() {
   }
 
   if (good == false) {
-    watchOrPlay.innerHTML = 'WRONG !';
+    watchOrPlay.innerHTML = "You're stupid!";
     setTimeout(() => {
-      watchOrPlay.innerHTML = 'WATCH !';
+      watchOrPlay.innerHTML = '';
+      clearColor();
+      compTurn = true;
+      nbCompTurn = 0;
+      playerOrder = [];
+      good = true;
+      interval = setInterval(gameTurn, 800);
     }, 800);
-    compTurn = true;
-    flash = 0;
-    playerOrder = [];
-    good = true;
-    intervalID = setInterval(gameTurn, 800);
   }
 
-  if (turn == playerOrder.length && good && !win) {
-    turn++;
+  if (nbUserTurn == playerOrder.length && good && !win) {
+    nbUserTurn++;
     playerOrder = [];
     compTurn = true;
-    flash = 0;
-    score.innerHTML = turn * 10 - 10;
-    intervalID = setInterval(gameTurn, 800);
+    nbCompTurn = 0;
+    score.innerHTML = nbUserTurn * 10 - 10;
+    interval = setInterval(gameTurn, 800);
   }
 }
 
@@ -155,5 +160,3 @@ function winGame() {
   watchOrPlay.innerHTML = 'YOU WIN !';
   win = true;
 }
-
-play();
