@@ -1,3 +1,19 @@
+const saveButton = document.querySelector('.save');
+const scoreButton = document.querySelector('.score-button');
+const playBody = document.querySelector('.play-body');
+const settingsBody = document.querySelector('.settings-body');
+const scoresBody = document.querySelector('.scores-body');
+
+saveButton.addEventListener('click', function () {
+  playBody.style.display = 'block';
+  settingsBody.style.display = 'none';
+});
+
+scoreButton.addEventListener('click', function () {
+  scoresBody.style.display = 'block';
+  playBody.style.display = 'none';
+});
+
 // Variables
 
 let order = []; // on va stocker dans cette variable la séquence de 20 couleurs
@@ -151,7 +167,7 @@ function check() {
     playerOrder = [];
     compTurn = true;
     nbCompTurn = 0;
-    score.innerHTML = nbUserTurn * 10 - 10;
+    score.innerHTML = 'SCORE : ' + (nbUserTurn * 10 - 10);
     interval = setInterval(gameTurn, 800);
   }
 }

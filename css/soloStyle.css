@@ -1,9 +1,15 @@
 body {
   font-family: 'Sora', sans-serif;
   margin: 0;
+  padding: 0;
+  color: #ffffff;
 }
 
-.header {
+.play-body {
+  display: none;
+}
+
+.header-play {
   display: flex;
   justify-content: space-between;
   margin: 10px;
@@ -20,15 +26,16 @@ body {
   cursor: pointer;
 }
 
-img {
+.sound-image {
   width: 30px;
   height: 30px;
   cursor: pointer;
 }
 
-h1 {
+.play-h1 {
   margin-bottom: 30px;
   text-align: center;
+  font-size: 35px;
 }
 
 .touchUp,
@@ -80,26 +87,48 @@ h1 {
 }
 
 .theScore {
+  width: 100%;
   display: flex;
   justify-content: center;
   flex-direction: row;
   font-weight: bold;
-  background-color: #ffe0c8;
+  background-color: #47864a;
+  border-radius: 24px;
+}
+
+.score-button-and-banner {
+  text-align: center;
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
 .score {
   padding-right: 20px;
 }
 
-.start {
+.score-button {
+  display: inline-block;
+  margin: auto;
+  text-align: center;
   padding-left: 20px;
   padding-right: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: #f1c40f;
+  border-radius: 24px;
+  font-family: 'Sora', sans-serif;
+  font-size: 25px;
+  cursor: pointer;
+  outline: none;
+}
+
+.start {
+  padding-left: 40px;
+  padding-right: 40px;
   margin-top: 10px;
   background-color: #f1c40f;
   border-radius: 24px;
-  color: #ffffff;
   font-family: 'Sora', sans-serif;
-  font-size: 30px;
   border-color: #f1c40f;
   cursor: pointer;
   outline: none;
@@ -129,6 +158,6 @@ h1 {
   }
 
   .theScore {
-    font-size: 20px;
+    font-size: 30px;
   }
 }

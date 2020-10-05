@@ -3,11 +3,11 @@
   font-weight: 1000;
 }
 
-h1, h2 {
+.title {
   font-size: 25px;
 }
 
-.header{
+.header-settings{
   text-align: center;
 }
 
@@ -181,7 +181,7 @@ label:active:after {
 }
 
 @media screen and (min-width: 768px) { 
-  body{
+  .settings-body{
     padding-left: 80px;
     padding-right:80px;
   }
