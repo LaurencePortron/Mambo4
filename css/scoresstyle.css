@@ -1,5 +1,5 @@
-body {
-  background-color: #fffbfb;
+.scores-body {
+  display: none;
 }
 
 .header {
@@ -21,9 +21,9 @@ body {
   outline: none;
 }
 
-img {
-  width: 20px;
-  height: 20px;
+.sound-image {
+  width: 30px;
+  height: 30px;
 }
 
 .score_card {
