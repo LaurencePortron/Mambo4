@@ -176,3 +176,33 @@ function winGame() {
   watchOrPlay.innerHTML = 'YOU WIN !';
   win = true;
 }
+// scores js laurence
+let scoreTable = [
+  {
+    name: 'lolo',
+    score: '400',
+  },
+  {
+    name: 'amandine',
+    score: '500',
+  },
+];
+
+function compare(a, b) {
+  if (a.score > b.score) {
+    return -1;
+  } else if (b.score < a.score) {
+    return 1;
+  } else return 0;
+}
+
+let sortedScoreTable = scoreTable.sort(compare);
+console.log(sortedScoreTable);
+
+for (let i = 0; i < sortedScoreTable.length; i++) {
+  const scoreCase = document.querySelector('.score_case');
+  scoreCase.innerHTML += `
+  <div><td>${sortedScoreTable[i].name}</td>
+  <td>${sortedScoreTable[i].score}</td></div>
+ `;
+}
