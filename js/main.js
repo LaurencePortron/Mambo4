@@ -176,33 +176,36 @@ function winGame() {
   watchOrPlay.innerHTML = 'YOU WIN !';
   win = true;
 }
+
 // scores js laurence
-let scoreTable = [
-  {
-    name: 'lolo',
-    score: '400',
-  },
-  {
-    name: 'amandine',
-    score: '500',
-  },
-];
 
-function compare(a, b) {
-  if (a.score > b.score) {
-    return -1;
-  } else if (b.score < a.score) {
-    return 1;
-  } else return 0;
-}
+const scoreCases = document.getElementsByClassName('.score_case');
 
-let sortedScoreTable = scoreTable.sort(compare);
-console.log(sortedScoreTable);
+const highScore = JSON.parse(localStorage.getItem('highScore')) || [];
+//get reference to scores in localStorage & if there are no scores it turns into an empty array (initializaing empty highscores array)
 
-for (let i = 0; i < sortedScoreTable.length; i++) {
-  const scoreCase = document.querySelector('.score_case');
-  scoreCase.innerHTML += `
-  <div><td>${sortedScoreTable[i].name}</td>
-  <td>${sortedScoreTable[i].score}</td></div>
- `;
-}
+highScoreList.innerHTML = highScore
+  .map((score) => {
+    return `<div class="high_score">${score.username} - ${score.score}</div>`;
+  })
+  .join(''); //converting each element of the array and adding it to the table
+
+const maxHighScores = 6; // maximum 6 scores can be stored
+console.log(highScore);
+
+const score = {
+  score: mostRecentScore,
+  name: username.value,
+};
+highScore.push(score);
+
+//sort function: if b score is higher than a score than put b before a
+highScore.sort((a, b) => {
+  return b.score - a.score;
+});
+// highScore.sort((a, b) => b.score - a.score) //same function
+highScore.splice(5); //starts cutting off everything after index 5
+
+//update localStorage with scores
+localStorage.setItem('highScore', JSON.stringify(highScore));
+console.log(highScore);
