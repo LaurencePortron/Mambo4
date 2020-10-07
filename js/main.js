@@ -121,22 +121,18 @@ function gameTurn() {
 
 function rouge() {
   carreRouge.style.opacity = '0.7';
-  rougeSound.play();
 }
 
 function bleu() {
   carreBleu.style.opacity = '0.7';
-  bleuSound.play();
 }
 
 function jaune() {
   carreJaune.style.opacity = '0.7';
-  jauneSound.play();
 }
 
 function vert() {
   carreVert.style.opacity = '0.7';
-  vertSound.play();
 }
 
 function clearColor() {
@@ -150,7 +146,6 @@ carreRouge.addEventListener('click', (event) => {
   playerOrder.push(1);
   check();
   rouge();
-  rougeSound.play();
   setTimeout(() => {
     clearColor();
   }, 300);
@@ -160,7 +155,6 @@ carreBleu.addEventListener('click', (event) => {
   playerOrder.push(2);
   check();
   bleu();
-  bleuSound.play();
   setTimeout(() => {
     clearColor();
   }, 300);
@@ -170,7 +164,6 @@ carreJaune.addEventListener('click', (event) => {
   playerOrder.push(3);
   check();
   jaune();
-  jauneSound.play();
   setTimeout(() => {
     clearColor();
   }, 300);
@@ -180,7 +173,6 @@ carreVert.addEventListener('click', (event) => {
   playerOrder.push(4);
   check();
   vert();
-  vertSound.play();
   setTimeout(() => {
     clearColor();
   }, 300);
