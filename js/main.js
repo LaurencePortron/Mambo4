@@ -179,18 +179,17 @@ function winGame() {
 
 // scores js laurence
 
-const scoreCases = document.getElementsByClassName('.score_case');
-//const finalScore = document.getElementsByClassName('.score');
-//const score = document.querySelector('.score');
-
+/*const scoreCases = document.getElementsByClassName('.score_cases');
+const finalScore = document.getElementsByClassName('.score');
 const mostRecentScore = localStorage.getItem('mostRecentScore');
 
 const highScore = JSON.parse(localStorage.getItem('highScore')) || [];
 //get reference to scores in localStorage & if there are no scores it turns into an empty array (initializaing empty highscores array)
 
 const maxHighScores = 6; // maximum 6 scores can be stored
+console.log(highScore);
 
-//finalScore.innerHTML = mostRecentScore;
+finalScore.innerHTML = mostRecentScore;
 
 const scores = {
   scores: score.value,
@@ -199,15 +198,15 @@ const scores = {
 
 scoreCases.innerHTML = highScore
   .map((scores) => {
-    return `<div>${scores.name} - ${scores.scores}</div>`;
+    return `<div class="high_score">${scores.name} - ${scores.scores}</div>`;
   })
   .join(''); //converting each element of the array and adding it to the table
 
-highScore.push(scores);
+highScore.push(score);
 
 //sort function: if b score is higher than a score than put b before a
 highScore.sort((a, b) => {
-  return b.scores - a.scores;
+  return b.score - a.score;
 });
 // highScore.sort((a, b) => b.score - a.score) //same function
 highScore.splice(5); //starts cutting off everything after index 5
@@ -215,3 +214,4 @@ highScore.splice(5); //starts cutting off everything after index 5
 //update localStorage with scores
 localStorage.setItem('highScore', JSON.stringify(highScore));
 console.log(highScore);
+*/
