@@ -193,6 +193,29 @@ function winGame() {
   }, 2000);
   win = true;
 }
+
+// choix du type de son
+let soundDefault = 'music';
+let soundChosen = document.querySelector(`.emoji-${soundDefault}`);
+soundChosen.classList.add('emoji-default');
+const soundCat = document.querySelector(`.emoji-cat`);
+const soundMusic = document.querySelector(`.emoji-music`);
+const soundPoo = document.querySelector(`.emoji-poo`);
+soundCat.addEventListener('click', function () {
+  soundChosen.classList.remove('emoji-default');
+  soundChosen = document.querySelector(`.emoji-cat`);
+  soundChosen.classList.add('emoji-default');
+});
+soundMusic.addEventListener('click', function () {
+  soundChosen.classList.remove('emoji-default');
+  soundChosen = document.querySelector(`.emoji-music`);
+  soundChosen.classList.add('emoji-default');
+});
+soundPoo.addEventListener('click', function () {
+  soundChosen.classList.remove('emoji-default');
+  soundChosen = document.querySelector(`.emoji-poo`);
+  soundChosen.classList.add('emoji-default');
+});
 // scores js laurence
 let scoreTable = [
   {
