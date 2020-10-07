@@ -184,8 +184,8 @@ const scoreCases = document.getElementsByClassName('.score_case');
 const highScore = JSON.parse(localStorage.getItem('highScore')) || [];
 //get reference to scores in localStorage & if there are no scores it turns into an empty array (initializaing empty highscores array)
 
-highScoreList.innerHTML = highScore
-  .map((score) => {
+scoreCases.innerHTML = highScore
+  .map((scores) => {
     return `<div class="high_score">${score.username} - ${score.score}</div>`;
   })
   .join(''); //converting each element of the array and adding it to the table
@@ -193,15 +193,16 @@ highScoreList.innerHTML = highScore
 const maxHighScores = 6; // maximum 6 scores can be stored
 console.log(highScore);
 
-const score = {
-  score: mostRecentScore,
-  name: username.value,
+const scores = {
+  scores: score,
+  name: 'lolo',
 };
-highScore.push(score);
+
+highScore.push(scores);
 
 //sort function: if b score is higher than a score than put b before a
 highScore.sort((a, b) => {
-  return b.score - a.score;
+  return b.scores - a.scores;
 });
 // highScore.sort((a, b) => b.score - a.score) //same function
 highScore.splice(5); //starts cutting off everything after index 5
