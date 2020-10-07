@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <title>Mambo4</title>
     <link rel="stylesheet" href="../css/styleAccueil.css" />
+    <link rel="stylesheet" href="../css/style_name.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Sora:wght@700&display=swap"
       rel="stylesheet"
@@ -11,38 +12,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body>
-    <header class="header">
-      <img src="../images/logo-mambo4.png" alt="Mambo4" />
-    </header>
-    <main class="main">
-      <div class="menuAccueil">
-        <a href="playSolo.html" class="btn-menuAccueil">
-          <div id="triangle"></div>
-          <p>PLAY !</p>
+    <div class="home-body">
+      <header class="header">
+        <img src="../images/logo-mambo4.png" alt="Mambo4" />
+      </header>
+      <main class="main">
+        <div class="menuAccueil">
+          <a href="playSolo.html" class="btn-menuAccueil">
+            <div id="triangle"></div>
+            <p>PLAY !</p>
+          </a>
+          <a href="playMulti.html" class="btn-menuAccueil">
+            <div class="circleJ1"></div>
+            <p>VS</p>
+            <div class="circleJ2"></div>
+          </a>
+          <a href="scoresindex.html" class="btn-menuAccueil">
+            <img src="../images/Mambo.png" alt="Mambo" id="imgMambo" />
+            <p>SCORES</p>
+          </a>
+          <a href="settings.html" class="btn-menuAccueil">
+            <img
+              src="../images/settings_jeu.png"
+              alt="Settings"
+              id="imgSettings"
+            />
+            <p>SETTINGS</p>
+          </a>
+        </div>
+      </main>
+      <footer class="footer">
+        <a href="aboutUs.html">
+          <input class="linkAboutUs" type="button" value="About US" />
         </a>
-        <a href="playMulti.html" class="btn-menuAccueil">
-          <div class="circleJ1"></div>
-          <p>VS</p>
-          <div class="circleJ2"></div>
-        </a>
-        <a href="scoresindex.html" class="btn-menuAccueil">
-          <img src="../images/Mambo.png" alt="Mambo" id="imgMambo" />
-          <p>SCORES</p>
-        </a>
-        <a href="settings.html" class="btn-menuAccueil">
-          <img
-            src="../images/settings_jeu.png"
-            alt="Settings"
-            id="imgSettings"
-          />
-          <p>SETTINGS</p>
-        </a>
-      </div>
-    </main>
-    <footer class="footer">
-      <a href="aboutUs.html">
-        <input class="linkAboutUs" type="button" value="About US" />
-      </a>
-    </footer>
+      </footer>
+    </div>
+    <div class="login-body">
+      <form class="sectionName">
+        <h1>WELCOME TO MAMBO4 !</h1>
+        <h3>Log In To Start Playing</h3>
+        <input type="text" name="nomJoueur2" id="nomJoueur" />
+        <input type="button" value="PLAY !" class="login-button" />
+      </form>
+      <script type="text/javascript" src="../js/main.js"></script>
+    </div>
   </body>
 </html>
