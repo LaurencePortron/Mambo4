@@ -180,23 +180,28 @@ function winGame() {
 // scores js laurence
 
 const scoreCases = document.getElementsByClassName('.score_case');
+//const finalScore = document.getElementsByClassName('.score');
+//const score = document.querySelector('.score');
+
+const mostRecentScore = localStorage.getItem('mostRecentScore');
 
 const highScore = JSON.parse(localStorage.getItem('highScore')) || [];
 //get reference to scores in localStorage & if there are no scores it turns into an empty array (initializaing empty highscores array)
 
-scoreCases.innerHTML = highScore
-  .map((scores) => {
-    return `<div class="high_score">${score.username} - ${score.score}</div>`;
-  })
-  .join(''); //converting each element of the array and adding it to the table
-
 const maxHighScores = 6; // maximum 6 scores can be stored
-console.log(highScore);
+
+//finalScore.innerHTML = mostRecentScore;
 
 const scores = {
-  scores: score,
+  scores: score.value,
   name: 'lolo',
 };
+
+scoreCases.innerHTML = highScore
+  .map((scores) => {
+    return `<div>${scores.name} - ${scores.scores}</div>`;
+  })
+  .join(''); //converting each element of the array and adding it to the table
 
 highScore.push(scores);
 
