@@ -1,0 +1,95 @@
+* {
+  font-family: ‘Sora’, sans-serif;
+  font-weight: 1000;
+}
+#triangle {
+  width: 0;
+  height: 0;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-right: 20px solid #47864a;
+  border-radius: 6px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+img {
+  width: 600px;
+}
+
+.rules {
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 10px;
+  background-color: #38548c;
+  border-radius: 24px;
+  color: #ffffff;
+  font-family: 'Sora', sans-serif;
+  font-size: 30px;
+  text-align: center;
+  /* border-radius: 24px;
+  background-color: #38548c;
+  text-align: center;
+  margin-bottom: 30px;
+  color: white;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  font-size: 25px; */
+}
+
+.ruleGame {
+  text-align: center;
+}
+
+.play:hover {
+  cursor: pointer;
+}
+
+.principeGame {
+  background-color: #c0392b;
+  border-radius: 24px;
+  color: white;
+  padding: 30px;
+  margin-bottom: 30px;
+  font-size: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.goalgame {
+  background-color: #47864a;
+  border-radius: 24px;
+  color: white;
+  text-align: center;
+  padding: 30px;
+  font-size: 25px;
+  margin-bottom: 30px;
+}
+
+.contener-play {
+  display: flex;
+  justify-content: center;
+}
+
+.play {
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 10px;
+  background-color: #f1c40f;
+  border-radius: 24px;
+  color: #ffffff;
+  font-family: 'Sora', sans-serif;
+  font-size: 30px;
+  border-color: #f1c40f;
+  cursor: pointer;
+  outline: none;
+}
+
+.save-link {
+  text-decoration: none;
+}

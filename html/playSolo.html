@@ -11,26 +11,39 @@
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mambo4/Play</title>
+    <audio class="pet1" src="../sound/pet1.mp3"></audio>
+    <audio class="pet2" src="../sound/pet2.mp3"></audio>
+    <audio class="pet3" src="../sound/pet3.mp3"></audio>
+    <audio class="pet4" src="../sound/pet4.mp3"></audio>
+    <audio class="bouc" src="../sound/bouc.mp3"></audio>
+    <audio class="chien" src="../sound/chien.mp3"></audio>
+    <audio class="chat" src="../sound/chat.mp3"></audio>
+    <audio class="cheval" src="../sound/cheval.mp3"></audio>
+    <audio class="do" src="../sound/do.mp3"></audio>
+    <audio class="re" src="../sound/re.mp3"></audio>
+    <audio class="mi" src="../sound/mi.mp3"></audio>
+    <audio class="si" src="../sound/si.mp3"></audio>
   </head>
   <body>
     <!-- Ouverture du body play -->
     <div class="play-body">
       <header class="header-play">
-        <a href="index.html"><div id="triangle"></div></a>
-        <div class="start-message">
-          <div class="container-start">
-            <div class="start">
-              <h1 class="play-h1">START</h1>
-            </div>
-          </div>
-          <h1 class="watch-and-play play-h1"></h1>
+        <div class="triangle-sound">
+          <a href="index.html"><div id="triangle"></div></a>
+          <img
+            class="sound-image"
+            src="../images/imgmusic.jpg"
+            alt="Image sound"
+          />
         </div>
-        <img
-          class="sound-image"
-          src="../images/imgmusic.jpg"
-          alt="Image sound"
-        />
+        <div class="start-message">
+          <div class="start">
+            <h1 class="play-h1">START</h1>
+          </div>
+          <h1 class="message"></h1>
+        </div>
       </header>
+
       <div class="touchUp">
         <div class="carreRouge"></div>
         <div class="carreBleu"></div>
@@ -154,6 +167,5 @@
     </div>
     <!-- Fermeture du body scores -->
     <script src="../js/main.js"></script>
-
   </body>
 </html>

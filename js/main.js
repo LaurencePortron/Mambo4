@@ -1,3 +1,5 @@
+// Gestion de l'affichage des différentes vies
+
 const saveButton = document.querySelector('.save');
 const scoreButton = document.querySelector('.score-button');
 const playBody = document.querySelector('.play-body');
@@ -14,6 +16,32 @@ scoreButton.addEventListener('click', function () {
   playBody.style.display = 'none';
 });
 
+const imageSoundOnOff = document.querySelector('.sound-image');
+imageSoundOnOff.addEventListener('click', function () {
+  if (imageSoundOnOff.getAttribute('src') == '../images/imgmute.png') {
+    imageSoundOnOff.setAttribute('src', '../images/imgmusic.jpg');
+    soundActive = true;
+  } else {
+    imageSoundOnOff.setAttribute('src', '../images/imgmute.png');
+    soundActive = false;
+  }
+});
+//Gestion du mode increase speed
+
+let increaseSpeed = false;
+let speedInterval = 800;
+
+const buttonIncreaseSpeed = document.querySelector('#switch-speed');
+buttonIncreaseSpeed.addEventListener('change', function () {
+  if (increaseSpeed == false) {
+    increaseSpeed = true;
+    speedInterval = 400;
+  } else {
+    increaseSpeed = false;
+    speedInterval = 800;
+  }
+});
+
 // Variables
 
 let order = []; // on va stocker dans cette variable la séquence de 20 couleurs
@@ -24,14 +52,20 @@ let good; // retourne true ou false si le joueur clique sur la bonne ou la mauva
 let compTurn; // true si c'est au tour de l'ordinateur
 let interval;
 let win; // si true, le joueur a gagné
+let soundActive = true;
 
 const score = document.querySelector('.score');
 const carreRouge = document.querySelector('.carreRouge');
 const carreBleu = document.querySelector('.carreBleu');
 const carreJaune = document.querySelector('.carreJaune');
 const carreVert = document.querySelector('.carreVert');
-const watchOrPlay = document.querySelector('.watch-and-play');
+const message = document.querySelector('.message');
 const startButton = document.querySelector('.start');
+
+const rougeSound = document.querySelector('.do');
+const vertSound = document.querySelector('.re');
+const bleuSound = document.querySelector('.mi');
+const jauneSound = document.querySelector('.si');
 
 // création d'un écouteur, déclenchant le jeu par un clic sur le bouton start
 
@@ -51,12 +85,12 @@ function play() {
   score.innerHTML = 'SCORE : 0'; // on remet le score à 0
   good = true; // on remet good à true si le joueur avait fait une erreur
 
-  for (let i = 0; i < 20; i++) {
+  for (let i = 0; i < 5; i++) {
     // cette boucle va créer un tableau de 20 chiffres compris entre 1 et 4
     order.push(Math.floor(Math.random() * 4) + 1);
   }
   compTurn = true; // on indique que c'est le tour de l'ordinateur
-  interval = setInterval(gameTurn, 800);
+  interval = setInterval(gameTurn, speedInterval);
 }
 // cette foncton permet de créer le tour de jeu
 
@@ -83,18 +117,22 @@ function gameTurn() {
 
 function rouge() {
   carreRouge.style.opacity = '0.7';
+  rougeSound.play();
 }
 
 function bleu() {
   carreBleu.style.opacity = '0.7';
+  bleuSound.play();
 }
 
 function jaune() {
   carreJaune.style.opacity = '0.7';
+  jauneSound.play();
 }
 
 function vert() {
   carreVert.style.opacity = '0.7';
+  vertSound.play();
 }
 
 function clearColor() {
@@ -108,6 +146,7 @@ carreRouge.addEventListener('click', (event) => {
   playerOrder.push(1);
   check();
   rouge();
+  rougeSound.play();
   setTimeout(() => {
     clearColor();
   }, 300);
@@ -117,6 +156,7 @@ carreBleu.addEventListener('click', (event) => {
   playerOrder.push(2);
   check();
   bleu();
+  bleuSound.play();
   setTimeout(() => {
     clearColor();
   }, 300);
@@ -126,6 +166,7 @@ carreJaune.addEventListener('click', (event) => {
   playerOrder.push(3);
   check();
   jaune();
+  jauneSound.play();
   setTimeout(() => {
     clearColor();
   }, 300);
@@ -135,6 +176,7 @@ carreVert.addEventListener('click', (event) => {
   playerOrder.push(4);
   check();
   vert();
+  vertSound.play();
   setTimeout(() => {
     clearColor();
   }, 300);
@@ -145,20 +187,16 @@ function check() {
     good = false;
   }
 
-  if (playerOrder.length == 20 && good) {
+  if (playerOrder.length == 5 && good) {
     winGame();
   }
 
   if (good == false) {
-    watchOrPlay.innerHTML = "You're stupid!";
+    message.innerHTML = 'YOU LOOSE, TRY AGAIN !';
     setTimeout(() => {
-      watchOrPlay.innerHTML = '';
+      message.innerHTML = '';
       clearColor();
-      compTurn = true;
-      nbCompTurn = 0;
-      playerOrder = [];
-      good = true;
-      interval = setInterval(gameTurn, 800);
+      play();
     }, 800);
   }
 
@@ -168,12 +206,15 @@ function check() {
     compTurn = true;
     nbCompTurn = 0;
     score.innerHTML = 'SCORE : ' + (nbUserTurn * 10 - 10);
-    interval = setInterval(gameTurn, 800);
+    interval = setInterval(gameTurn, speedInterval);
   }
 }
 
 function winGame() {
-  watchOrPlay.innerHTML = 'YOU WIN !';
+  message.innerHTML = 'YOU WIN !';
+  setTimeout(() => {
+    message.innerHTML = '';
+  }, 2000);
   win = true;
 }
 
