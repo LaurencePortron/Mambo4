@@ -219,8 +219,25 @@ function winGame() {
 }
 
 // scores js laurence
+/* 
+localStorage.setItem('currentScore', 'score.innerHTML');
+localStorage.getItem('currentScore');
+const scoreCase = document.querySelector('.score_case');
+scoreCase.innerHTML += `
+  <div><td>${currentScore}</td>`;
 
-/*const scoreCases = document.getElementsByClassName('.score_cases');
+ 
+currentScore = nbUserTurn * 10 - 10;
+localStorage.setItem('currentScore', ' (nbUserTurn * 10 - 10)');
+localStorage.getItem('currentScore');
+
+const scoreCase = document.querySelector('.score_case');
+scoreCase.innerHTML += `
+  <div><td>${currentScore}</td>`;
+
+
+
+const scoreCases = document.getElementsByClassName('.score_cases');
 const finalScore = document.getElementsByClassName('.score');
 const mostRecentScore = localStorage.getItem('mostRecentScore');
 
