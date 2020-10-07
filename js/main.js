@@ -12,6 +12,7 @@ let increaseSpeed = false;
 let speedInterval = 800;
 let login;
 
+
 const score = document.querySelector('.score');
 const carreRouge = document.querySelector('.carreRouge');
 const carreBleu = document.querySelector('.carreBleu');
@@ -28,6 +29,10 @@ const homeBody = document.querySelector('.home-body');
 const scoresBody = document.querySelector('.scores-body');
 const buttonIncreaseSpeed = document.querySelector('#switch-speed');
 const loginButton = document.querySelector('.login-button');
+const rougeSound = document.querySelector('.do');
+const vertSound = document.querySelector('.re');
+const bleuSound = document.querySelector('.mi');
+const jauneSound = document.querySelector('.si');
 
 // Gestion du login
 
@@ -49,6 +54,16 @@ scoreButton.addEventListener('click', function () {
   playBody.style.display = 'none';
 });
 
+const imageSoundOnOff = document.querySelector('.sound-image');
+imageSoundOnOff.addEventListener('click', function () {
+  if (imageSoundOnOff.getAttribute('src') == '../images/imgmute.png') {
+    imageSoundOnOff.setAttribute('src', '../images/imgmusic.jpg');
+    soundActive = true;
+  } else {
+    imageSoundOnOff.setAttribute('src', '../images/imgmute.png');
+    soundActive = false;
+  }
+});
 //Gestion du mode increase speed
 
 buttonIncreaseSpeed.addEventListener('change', function () {
@@ -111,18 +126,22 @@ function gameTurn() {
 
 function rouge() {
   carreRouge.style.opacity = '0.7';
+  rougeSound.play();
 }
 
 function bleu() {
   carreBleu.style.opacity = '0.7';
+  bleuSound.play();
 }
 
 function jaune() {
   carreJaune.style.opacity = '0.7';
+  jauneSound.play();
 }
 
 function vert() {
   carreVert.style.opacity = '0.7';
+  vertSound.play();
 }
 
 function clearColor() {
@@ -136,6 +155,7 @@ carreRouge.addEventListener('click', (event) => {
   playerOrder.push(1);
   check();
   rouge();
+  rougeSound.play();
   setTimeout(() => {
     clearColor();
   }, 300);
@@ -145,6 +165,7 @@ carreBleu.addEventListener('click', (event) => {
   playerOrder.push(2);
   check();
   bleu();
+  bleuSound.play();
   setTimeout(() => {
     clearColor();
   }, 300);
@@ -154,6 +175,7 @@ carreJaune.addEventListener('click', (event) => {
   playerOrder.push(3);
   check();
   jaune();
+  jauneSound.play();
   setTimeout(() => {
     clearColor();
   }, 300);
@@ -163,6 +185,7 @@ carreVert.addEventListener('click', (event) => {
   playerOrder.push(4);
   check();
   vert();
+  vertSound.play();
   setTimeout(() => {
     clearColor();
   }, 300);
@@ -221,15 +244,4 @@ function compare(a, b) {
   } else if (b.score < a.score) {
     return 1;
   } else return 0;
-}
-
-let sortedScoreTable = scoreTable.sort(compare);
-console.log(sortedScoreTable);
-
-for (let i = 0; i < sortedScoreTable.length; i++) {
-  const scoreCase = document.querySelector('.score_case');
-  scoreCase.innerHTML += `
-  <div><td>${sortedScoreTable[i].name}</td>
-  <td>${sortedScoreTable[i].score}</td></div>
- `;
 }
