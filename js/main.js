@@ -1,10 +1,48 @@
-// Gestion de l'affichage des différentes vies
+// Création des variables
 
+let order = []; // on va stocker dans cette variable la séquence de 20 couleurs
+let playerOrder = []; // liste des couleurs sur lesquelles le joueur a cliqué
+let nbCompTurn; // nombre de tour qu'a joué l'ordinateur
+let nbUserTurn; // tour actuel
+let good; // retourne true ou false si le joueur clique sur la bonne ou la mauvaise couleur
+let compTurn; // true si c'est au tour de l'ordinateur
+let interval;
+let win; // si true, le joueur a gagné
+let increaseSpeed = false;
+let speedInterval = 800;
+let login;
+
+
+const score = document.querySelector('.score');
+const carreRouge = document.querySelector('.carreRouge');
+const carreBleu = document.querySelector('.carreBleu');
+const carreJaune = document.querySelector('.carreJaune');
+const carreVert = document.querySelector('.carreVert');
+const message = document.querySelector('.message');
+const startButton = document.querySelector('.start');
 const saveButton = document.querySelector('.save');
 const scoreButton = document.querySelector('.score-button');
+const loginBody = document.querySelector('.login-body');
 const playBody = document.querySelector('.play-body');
 const settingsBody = document.querySelector('.settings-body');
+const homeBody = document.querySelector('.home-body');
 const scoresBody = document.querySelector('.scores-body');
+const buttonIncreaseSpeed = document.querySelector('#switch-speed');
+const loginButton = document.querySelector('.login-button');
+const rougeSound = document.querySelector('.do');
+const vertSound = document.querySelector('.re');
+const bleuSound = document.querySelector('.mi');
+const jauneSound = document.querySelector('.si');
+
+// Gestion du login
+
+loginButton.addEventListener('click', function (e) {
+  loginBody.style.display = 'none';
+  homeBody.style.display = 'block';
+  login = document.getElementById('nomJoueur').value;
+});
+
+// Gestion de l'affichage des différentes vues
 
 saveButton.addEventListener('click', function () {
   playBody.style.display = 'block';
@@ -28,10 +66,6 @@ imageSoundOnOff.addEventListener('click', function () {
 });
 //Gestion du mode increase speed
 
-let increaseSpeed = false;
-let speedInterval = 800;
-
-const buttonIncreaseSpeed = document.querySelector('#switch-speed');
 buttonIncreaseSpeed.addEventListener('change', function () {
   if (increaseSpeed == false) {
     increaseSpeed = true;
@@ -41,31 +75,6 @@ buttonIncreaseSpeed.addEventListener('change', function () {
     speedInterval = 800;
   }
 });
-
-// Variables
-
-let order = []; // on va stocker dans cette variable la séquence de 20 couleurs
-let playerOrder = []; // liste des couleurs sur lesquelles le joueur a cliqué
-let nbCompTurn; // nombre de tour qu'a joué l'ordinateur
-let nbUserTurn; // tour actuel
-let good; // retourne true ou false si le joueur clique sur la bonne ou la mauvaise couleur
-let compTurn; // true si c'est au tour de l'ordinateur
-let interval;
-let win; // si true, le joueur a gagné
-let soundActive = true;
-
-const score = document.querySelector('.score');
-const carreRouge = document.querySelector('.carreRouge');
-const carreBleu = document.querySelector('.carreBleu');
-const carreJaune = document.querySelector('.carreJaune');
-const carreVert = document.querySelector('.carreVert');
-const message = document.querySelector('.message');
-const startButton = document.querySelector('.start');
-
-const rougeSound = document.querySelector('.do');
-const vertSound = document.querySelector('.re');
-const bleuSound = document.querySelector('.mi');
-const jauneSound = document.querySelector('.si');
 
 // création d'un écouteur, déclenchant le jeu par un clic sur le bouton start
 
