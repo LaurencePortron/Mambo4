@@ -14,6 +14,17 @@ scoreButton.addEventListener('click', function () {
   playBody.style.display = 'none';
 });
 
+const imageSoundOnOff = document.querySelector('.sound-image');
+imageSoundOnOff.addEventListener('click', function () {
+  if (imageSoundOnOff.getAttribute('src') == '../images/imgmute.png') {
+    imageSoundOnOff.setAttribute('src', '../images/imgmusic.jpg');
+    soundActive = true;
+  } else {
+    imageSoundOnOff.setAttribute('src', '../images/imgmute.png');
+    soundActive = false;
+  }
+});
+
 // Variables
 
 let order = []; // on va stocker dans cette variable la séquence de 20 couleurs
@@ -24,6 +35,7 @@ let good; // retourne true ou false si le joueur clique sur la bonne ou la mauva
 let compTurn; // true si c'est au tour de l'ordinateur
 let interval;
 let win; // si true, le joueur a gagné
+let soundActive = true;
 
 const score = document.querySelector('.score');
 const carreRouge = document.querySelector('.carreRouge');
@@ -32,6 +44,11 @@ const carreJaune = document.querySelector('.carreJaune');
 const carreVert = document.querySelector('.carreVert');
 const watchOrPlay = document.querySelector('.watch-and-play');
 const startButton = document.querySelector('.start');
+
+const rougeSound = document.querySelector('.do');
+const vertSound = document.querySelector('.re');
+const bleuSound = document.querySelector('.mi');
+const jauneSound = document.querySelector('.si');
 
 // création d'un écouteur, déclenchant le jeu par un clic sur le bouton start
 
@@ -83,18 +100,22 @@ function gameTurn() {
 
 function rouge() {
   carreRouge.style.opacity = '0.7';
+  rougeSound.play();
 }
 
 function bleu() {
   carreBleu.style.opacity = '0.7';
+  bleuSound.play();
 }
 
 function jaune() {
   carreJaune.style.opacity = '0.7';
+  jauneSound.play();
 }
 
 function vert() {
   carreVert.style.opacity = '0.7';
+  vertSound.play();
 }
 
 function clearColor() {
@@ -108,6 +129,7 @@ carreRouge.addEventListener('click', (event) => {
   playerOrder.push(1);
   check();
   rouge();
+  rougeSound.play();
   setTimeout(() => {
     clearColor();
   }, 300);
@@ -117,6 +139,7 @@ carreBleu.addEventListener('click', (event) => {
   playerOrder.push(2);
   check();
   bleu();
+  bleuSound.play();
   setTimeout(() => {
     clearColor();
   }, 300);
@@ -126,6 +149,7 @@ carreJaune.addEventListener('click', (event) => {
   playerOrder.push(3);
   check();
   jaune();
+  jauneSound.play();
   setTimeout(() => {
     clearColor();
   }, 300);
@@ -135,6 +159,7 @@ carreVert.addEventListener('click', (event) => {
   playerOrder.push(4);
   check();
   vert();
+  vertSound.play();
   setTimeout(() => {
     clearColor();
   }, 300);
