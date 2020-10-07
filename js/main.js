@@ -1,3 +1,5 @@
+// Gestion de l'affichage des différentes vies
+
 const saveButton = document.querySelector('.save');
 const scoreButton = document.querySelector('.score-button');
 const playBody = document.querySelector('.play-body');
@@ -24,6 +26,21 @@ imageSoundOnOff.addEventListener('click', function () {
     soundActive = false;
   }
 });
+//Gestion du mode increase speed
+
+let increaseSpeed = false;
+let speedInterval = 800;
+
+const buttonIncreaseSpeed = document.querySelector('#switch-speed');
+buttonIncreaseSpeed.addEventListener('change', function () {
+  if (increaseSpeed == false) {
+    increaseSpeed = true;
+    speedInterval = 400;
+  } else {
+    increaseSpeed = false;
+    speedInterval = 800;
+  }
+});
 
 // Variables
 
@@ -42,7 +59,7 @@ const carreRouge = document.querySelector('.carreRouge');
 const carreBleu = document.querySelector('.carreBleu');
 const carreJaune = document.querySelector('.carreJaune');
 const carreVert = document.querySelector('.carreVert');
-const watchOrPlay = document.querySelector('.watch-and-play');
+const message = document.querySelector('.message');
 const startButton = document.querySelector('.start');
 
 const rougeSound = document.querySelector('.do');
@@ -68,12 +85,12 @@ function play() {
   score.innerHTML = 'SCORE : 0'; // on remet le score à 0
   good = true; // on remet good à true si le joueur avait fait une erreur
 
-  for (let i = 0; i < 20; i++) {
+  for (let i = 0; i < 5; i++) {
     // cette boucle va créer un tableau de 20 chiffres compris entre 1 et 4
     order.push(Math.floor(Math.random() * 4) + 1);
   }
   compTurn = true; // on indique que c'est le tour de l'ordinateur
-  interval = setInterval(gameTurn, 800);
+  interval = setInterval(gameTurn, speedInterval);
 }
 // cette foncton permet de créer le tour de jeu
 
@@ -170,20 +187,16 @@ function check() {
     good = false;
   }
 
-  if (playerOrder.length == 20 && good) {
+  if (playerOrder.length == 5 && good) {
     winGame();
   }
 
   if (good == false) {
-    watchOrPlay.innerHTML = "You're stupid!";
+    message.innerHTML = 'YOU LOOSE, TRY AGAIN !';
     setTimeout(() => {
-      watchOrPlay.innerHTML = '';
+      message.innerHTML = '';
       clearColor();
-      compTurn = true;
-      nbCompTurn = 0;
-      playerOrder = [];
-      good = true;
-      interval = setInterval(gameTurn, 800);
+      play();
     }, 800);
   }
 
@@ -193,11 +206,33 @@ function check() {
     compTurn = true;
     nbCompTurn = 0;
     score.innerHTML = 'SCORE : ' + (nbUserTurn * 10 - 10);
-    interval = setInterval(gameTurn, 800);
+    interval = setInterval(gameTurn, speedInterval);
   }
 }
 
 function winGame() {
-  watchOrPlay.innerHTML = 'YOU WIN !';
+  message.innerHTML = 'YOU WIN !';
+  setTimeout(() => {
+    message.innerHTML = '';
+  }, 2000);
   win = true;
+}
+// scores js laurence
+let scoreTable = [
+  {
+    name: 'lolo',
+    score: '400',
+  },
+  {
+    name: 'amandine',
+    score: '500',
+  },
+];
+
+function compare(a, b) {
+  if (a.score > b.score) {
+    return -1;
+  } else if (b.score < a.score) {
+    return 1;
+  } else return 0;
 }
