@@ -11,8 +11,15 @@ body {
 
 .header-play {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   margin: 10px;
+}
+
+.triangle-sound {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
 #triangle {
@@ -33,9 +40,10 @@ body {
 }
 
 .play-h1 {
-  margin-bottom: 30px;
+  margin: 0;
   text-align: center;
-  font-size: 35px;
+  font-size: 45px;
+  padding: 30px;
 }
 
 .touchUp,
@@ -132,9 +140,28 @@ body {
   border-color: #f1c40f;
   cursor: pointer;
   outline: none;
+  margin-top: 60px;
+  width: 15%;
+  text-align: center;
+}
+
+.message {
+  height: 50px;
+  color: black;
+}
+
+.start-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 @media screen and (min-width: 768px) {
+  .message {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+
   .img {
     max-width: 100%;
     height: auto;
