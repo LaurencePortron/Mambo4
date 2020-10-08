@@ -163,7 +163,7 @@ carreRouge.addEventListener('click', (event) => {
   rougeSound.play();
   setTimeout(() => {
     clearColor();
-    rougeSound.stop();
+    rougeSound.pause();
   }, 300);
 });
 
@@ -174,7 +174,7 @@ carreBleu.addEventListener('click', (event) => {
   bleuSound.play();
   setTimeout(() => {
     clearColor();
-    bleuSound.stop();
+    bleuSound.pause();
   }, 300);
 });
 
@@ -185,7 +185,7 @@ carreJaune.addEventListener('click', (event) => {
   jauneSound.play();
   setTimeout(() => {
     clearColor();
-    jauneSound.stop();
+    jauneSound.pause();
   }, 300);
 });
 
@@ -196,7 +196,7 @@ carreVert.addEventListener('click', (event) => {
   vertSound.play();
   setTimeout(() => {
     clearColor();
-    vertSound.stop();
+    vertSound.pause();
   }, 300);
 });
 
