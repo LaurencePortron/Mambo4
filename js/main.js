@@ -1,4 +1,13 @@
-// Gestion de l'affichage des différentes vies
+// Affichage du username sur la page settings
+
+const displayCurrentUser = document.querySelector('.display-current-user');
+
+let currentUserName = sessionStorage.user;
+if (currentUserName !== '') {
+  displayCurrentUser.innerHTML = currentUserName;
+}
+
+// Gestion de l'affichage des différentes vues
 
 const saveButton = document.querySelector('.save');
 const scoreButton = document.querySelector('.score-button');
