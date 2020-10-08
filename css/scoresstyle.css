@@ -1,0 +1,127 @@
+.scores-body {
+  display: none;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+}
+.play_button {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding: 20px;
+  margin-top: 10px;
+  background-color: #f1c40f;
+  border-radius: 24px;
+  color: #ffffff;
+  font-family: 'Sora', sans-serif;
+  font-size: 30px;
+  border-color: #f1c40f;
+  cursor: pointer;
+  outline: none;
+  margin-bottom: 50px;
+  border-color: transparent;
+}
+
+.score_card {
+  height: auto;
+
+  border-radius: 24px;
+  background-color: #38548c;
+  border-style: solid;
+  border-color: #47864a;
+  border-width: 10px;
+}
+
+.highscore {
+  display: flex;
+  justify-content: center;
+  color: #ffffff;
+  font-family: 'Sora', sans-serif;
+  font-size: 24px;
+  width: auto;
+  height: auto;
+  margin-top: 10px;
+}
+
+.highscore_case {
+  margin-right: 50px;
+  margin-left: 50px;
+  height: 55px;
+  border-radius: 12px;
+
+  background-color: #5577ba;
+
+  padding: 10px;
+  color: #ffffff;
+
+  font-family: 'Sora', sans-serif;
+  font-size: 24px;
+  text-align: center;
+}
+
+.scores {
+  display: flex;
+  justify-content: center;
+  color: #ffffff;
+  font-family: 'Sora', sans-serif;
+  font-size: 24px;
+  width: auto;
+  height: auto;
+}
+
+.score_case {
+  margin: 5px;
+  margin-right: 50px;
+  margin-left: 50px;
+  border-radius: 12px;
+
+  background-color: #5577ba;
+
+  margin-bottom: 10px;
+  padding: 10px;
+  color: #ffffff;
+
+  font-family: 'Sora', sans-serif;
+  font-size: 24px;
+  text-align: center;
+}
+.menu {
+  display: flex;
+  justify-content: center;
+}
+
+.menu_button {
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 10px;
+  background-color: #c0392b;
+  border-radius: 24px;
+  color: #ffffff;
+  font-family: 'Sora', sans-serif;
+  font-size: 30px;
+  border-color: transparent;
+  cursor: pointer;
+  outline: none;
+}
+.menu_button:hover,
+.play_button:hover {
+  opacity: 0.8;
+}
+
+@media screen and (min-width: 768px) {
+  .score_card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .highscore_desktop {
+    width: 100%;
+    align-self: center;
+  }
+  .scores_desktop {
+    width: 100%;
+  }
+}

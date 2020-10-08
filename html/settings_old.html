@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mambo 4 - Settings</title>
+    <link rel="stylesheet" href="../css/settings.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <img
+        class="logo-mambo4"
+        src="../images/logo-mambo4.png"
+        alt="Mambo4's logo"
+      />
+    </header>
+
+    <section class="login">
+      
+      <h1>
+        <span class="login-title"> You're logged as </span>
+        <span class="login-title-desktop"> Welcome </span>
+        <span class="current-login">anonymous</span>
+        <span class="login-title-desktop">
+          ! Not you ? Change your pseudo here !
+        </span>
+      </h1>
+      <p class="button-change-login">Change</p>
+      
+    </section>
+
+    <section class="parameters">
+      <div class="one-parameter">
+        <h2>Sounds</h2>
+        <input type="checkbox" id="switch-sounds" checked />
+        <label for="switch-sounds">Toggle</label>
+      </div>
+      <div class="one-parameter">
+        <h2>Chrono</h2>
+        <input type="checkbox" id="switch-chrono" />
+        <label for="switch-chrono">Toggle</label>
+      </div>
+      <div class="one-parameter">
+        <h2>Hard mode</h2>
+        <input type="checkbox" id="switch-hardmode" />
+        <label for="switch-hardmode">Toggle</label>
+      </div>
+      <div class="one-parameter">
+        <h2>Increase speed</h2>
+        <input type="checkbox" id="switch-speed" />
+        <label for="switch-speed">Toggle</label>
+      </div>
+    </section>
+
+    <section class="sounds">
+      <h2 class="choose-your-sounds">Wanna choose your sounds ?</h2>
+      <div class="emojis">
+        <img class="emoji-cat" src="../images/cat.png" alt="Emoji cat" />
+        <img class="emoji-music" src="../images/music.png" alt="Emoji music" />
+        <img class="emoji-poo" src="../images/poo.png" alt="Emoji poo" />
+      </div>
+    </section>
+
+    <section class="contener-save">
+      <a class="save-link" href="index.html"><h2 class="save">SAVE</h2></a>
+    </section>
+    <script src="../js/settings.js"></script>
+  </body>
+</html>

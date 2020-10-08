@@ -1,0 +1,222 @@
+* {
+  font-family: 'Sora', sans-serif;
+  font-weight: bold;
+}
+
+body {
+  margin: 0;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+}
+
+img {
+  width: 50%;
+}
+
+em {
+  font-style: italic;
+  font-size: 0.7em;
+}
+
+h1 {
+  background-color: #f1c40f;
+  text-align: center;
+  width: 90%;
+  margin: auto;
+  padding: 10px;
+  border-radius: 24px;
+  color: white;
+}
+
+nav ul li {
+  list-style: none;
+  position: fixed;
+  left: 5%;
+  top: 5%;
+  z-index: 1;
+}
+
+li a {
+  border-radius: 24px;
+  background-color: #f1c40f;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+}
+
+li:hover,
+a:hover {
+  opacity: 0.8;
+}
+
+li:visited,
+a:visited {
+  text-decoration: none;
+}
+
+article {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  z-index: 1;
+}
+
+article h2 {
+  width: 85%;
+  height: 250px;
+  margin: auto;
+  margin-left: 8%;
+  margin-right: 8%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 24px;
+  text-align: center;
+}
+
+.Laurence {
+  background-color: #c0392b;
+  border-radius: 24px;
+  color: white;
+}
+
+.Amandine {
+  background-color: #38548c;
+  border-radius: 24px;
+  color: white;
+}
+
+.Nicolas {
+  background-color: #f1c40f;
+  border-radius: 24px;
+  color: white;
+}
+
+.Gilles {
+  background-color: #47864a;
+  border-radius: 24px;
+  color: white;
+}
+
+.Cédric {
+  background-color: #ff8333;
+  border-radius: 24px;
+  color: white;
+}
+
+.italic {
+  font-style: italic;
+  font-size: em;
+}
+
+article div {
+  height: 250px;
+  margin-left: 8%;
+  margin-right: 8%;
+  border-radius: 90px;
+  border: 5px solid black;
+  widows: ;
+  width: 250px;
+}
+
+.laurenceGif {
+  background: url('./../images/members_pictures/laurence.jpg') no-repeat center;
+  background-size: 125%;
+  max-height: 250px;
+  min-width: 250px;
+}
+.laurenceGif:hover {
+  background: url('./../images/members_GIF/laurence.gif') no-repeat center;
+  background-size: 180%;
+  min-width: 250px;
+}
+
+.amandineGif {
+  background: url('./../images/members_pictures/amandine.jpg') no-repeat center;
+  background-size: 125%;
+  min-width: 250px;
+}
+.amandineGif:hover {
+  background: url('./../images/members_GIF/amandine.gif') no-repeat center;
+  background-size: 180%;
+  min-width: 250px;
+}
+
+.nicolasGif {
+  background: url('./../images/members_pictures/nicolas.jpg') no-repeat center;
+  background-size: 125%;
+  min-width: 250px;
+}
+.nicolasGif:hover {
+  background: url('./../images/members_GIF/nicolas.gif') no-repeat center;
+  background-size: 180%;
+  min-width: 250px;
+}
+
+.gillesGif {
+  background: url('./../images/members_pictures/gilles.jpg') no-repeat center;
+  background-size: 125%;
+  min-width: 250px;
+}
+.gillesGif:hover {
+  background: url('./../images/members_GIF/gilles.gif') no-repeat center;
+  background-size: 178%;
+  min-width: 250px;
+}
+
+.cedricGif {
+  background: url('./../images/members_pictures/cedric.jpg') no-repeat center;
+  background-size: 125%;
+  min-width: 250px;
+}
+.cedricGif:hover {
+  background: url('./../images/members_GIF/cedric.gif') no-repeat;
+  background-size: 150%;
+  background-position: bottom 60% right 50%;
+  min-width: 250px;
+}
+
+@media screen and (max-width: 600px) {
+  /*Smartphone*/
+  article div {
+    display: none;
+  }
+  li a {
+    padding: 15px 20px 15px 20px;
+  }
+  h1 {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 1024px) {
+  /*Tablette*/
+
+  article:nth-child(2n) {
+    flex-direction: row-reverse;
+  }
+  li a {
+    padding: 22px 35px 22px 35px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  /*Desktop*/
+
+  article:nth-child(2n + 1) {
+    margin-right: 150px;
+  }
+  article:nth-child(2n) {
+    flex-direction: row-reverse;
+    margin-left: 150px;
+  }
+  li a {
+    padding: 30px 100px 30px 100px;
+  }
+}
