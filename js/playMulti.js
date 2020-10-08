@@ -23,17 +23,6 @@ imageSoundOnOff.addEventListener('click', function () {
   }
 });
 
-const imageSoundOnOff = document.querySelector('.sound-image');
-imageSoundOnOff.addEventListener('click', function () {
-  if (imageSoundOnOff.getAttribute('src') == '../images/imgmute.png') {
-    imageSoundOnOff.setAttribute('src', '../images/imgmusic.jpg');
-    soundActive = true;
-  } else {
-    imageSoundOnOff.setAttribute('src', '../images/imgmute.png');
-    soundActive = false;
-  }
-});
-
 const buttonSwitchSound = document.querySelector('#switch-sounds');
 buttonSwitchSound.addEventListener('change', () => {
   if (buttonSwitchSound.checked) {
@@ -71,7 +60,6 @@ let good; // retourne true ou false si le joueur clique sur la bonne ou la mauva
 let compTurn; // true si c'est au tour de l'ordinateur
 let interval;
 let win; // si true, le joueur a gagné
-let soundActive = true;
 let player1Turn = true;
 let player1Points = 0;
 let player2Points = 0;
@@ -89,6 +77,11 @@ let rougeSound = document.querySelector('.do');
 let vertSound = document.querySelector('.re');
 let bleuSound = document.querySelector('.mi');
 let jauneSound = document.querySelector('.si');
+
+carreRouge.classList.add('disabled');
+carreBleu.classList.add('disabled');
+carreJaune.classList.add('disabled');
+carreVert.classList.add('disabled');
 
 // création d'un écouteur, déclenchant le jeu par un clic sur le bouton start
 
@@ -126,10 +119,14 @@ function gameTurn() {
     clearInterval(interval); // on stoppe la fonction
     compTurn = false; // on indique que ce n'est pas le tour de l'ordinateur
     clearColor(); // on éteint les couleurs
-    if (player1Turn){
-      message.innerHTML = "PLAYER 1";
+    carreRouge.classList.remove('disabled');
+    carreBleu.classList.remove('disabled');
+    carreJaune.classList.remove('disabled');
+    carreVert.classList.remove('disabled');
+    if (player1Turn) {
+      message.innerHTML = 'PLAYER 1';
     } else {
-      message.innerHTML = "PLAYER 2";
+      message.innerHTML = 'PLAYER 2';
     }
     player1Turn = !player1Turn;
   }
@@ -137,8 +134,13 @@ function gameTurn() {
   if (compTurn) {
     // on vérifie que ce soit le tour de l'ordinateur
     clearColor(); // on éteint les couleurs
+
+    carreRouge.classList.add('disabled');
+    carreBleu.classList.add('disabled');
+    carreJaune.classList.add('disabled');
+    carreVert.classList.add('disabled');
     setTimeout(() => {
-      message.innerHTML = "WATCH";
+      message.innerHTML = 'WATCH';
       if (order[nbCompTurn] == 1) rouge(); // si dans la séquence, le 1er chiffre est un 1 on allume le rouge au bout de 200mS
       if (order[nbCompTurn] == 2) bleu();
       if (order[nbCompTurn] == 3) jaune();
@@ -150,22 +152,30 @@ function gameTurn() {
 
 function rouge() {
   carreRouge.style.opacity = '0.7';
-  rougeSound.play();
+  if (soundActive) {
+    rougeSound.play();
+  }
 }
 
 function bleu() {
   carreBleu.style.opacity = '0.7';
-  bleuSound.play();
+  if (soundActive) {
+    bleuSound.play();
+  }
 }
 
 function jaune() {
   carreJaune.style.opacity = '0.7';
-  jauneSound.play();
+  if (soundActive) {
+    jauneSound.play();
+  }
 }
 
 function vert() {
   carreVert.style.opacity = '0.7';
-  vertSound.play();
+  if (soundActive) {
+    vertSound.play();
+  }
 }
 
 function clearColor() {
