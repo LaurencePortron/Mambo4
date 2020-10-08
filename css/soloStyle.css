@@ -95,6 +95,9 @@ a {
   cursor: pointer;
   margin-bottom: 40px;
 }
+.disabled {
+  pointer-events: none;
+}
 
 .theScore {
   width: 100%;

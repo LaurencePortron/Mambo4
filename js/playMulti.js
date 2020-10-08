@@ -78,6 +78,11 @@ let vertSound = document.querySelector('.re');
 let bleuSound = document.querySelector('.mi');
 let jauneSound = document.querySelector('.si');
 
+carreRouge.classList.add('disabled');
+carreBleu.classList.add('disabled');
+carreJaune.classList.add('disabled');
+carreVert.classList.add('disabled');
+
 // création d'un écouteur, déclenchant le jeu par un clic sur le bouton start
 
 startButton.addEventListener('click', (event) => {
@@ -114,6 +119,10 @@ function gameTurn() {
     clearInterval(interval); // on stoppe la fonction
     compTurn = false; // on indique que ce n'est pas le tour de l'ordinateur
     clearColor(); // on éteint les couleurs
+    carreRouge.classList.remove('disabled');
+    carreBleu.classList.remove('disabled');
+    carreJaune.classList.remove('disabled');
+    carreVert.classList.remove('disabled');
     if (player1Turn) {
       message.innerHTML = 'PLAYER 1';
     } else {
@@ -125,6 +134,11 @@ function gameTurn() {
   if (compTurn) {
     // on vérifie que ce soit le tour de l'ordinateur
     clearColor(); // on éteint les couleurs
+
+    carreRouge.classList.add('disabled');
+    carreBleu.classList.add('disabled');
+    carreJaune.classList.add('disabled');
+    carreVert.classList.add('disabled');
     setTimeout(() => {
       message.innerHTML = 'WATCH';
       if (order[nbCompTurn] == 1) rouge(); // si dans la séquence, le 1er chiffre est un 1 on allume le rouge au bout de 200mS
