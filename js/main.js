@@ -275,9 +275,9 @@ soundPoo.addEventListener('click', function () {
 });
 // scores js laurence
 
-// When user has won or loose, we add the score to the table
+// When the player won or lost, we add the score to the table
 function addScoreToTable() {
-  scoresTable.unshift({ user: 'todo', scoreValue });
+  scoresTable.unshift({ user: currentUserName, scoreValue });
   scoresTable.slice(5);
 
   scoresTable.sort((a, b) => {
