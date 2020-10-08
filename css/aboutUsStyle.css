@@ -16,6 +16,11 @@ header img {
   width: 80%;
 }
 
+em{
+  font-style: italic;
+  font-size: .7em;
+}
+
 h1 {
   background-color: #f1c40f;
   text-align: center;
