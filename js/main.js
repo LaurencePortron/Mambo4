@@ -1,3 +1,11 @@
+// Gestion du changement de login
+
+const changeLogin = document.querySelector('.login');
+
+changeLogin.addEventListener('click', function () {
+  sessionStorage.removeItem('user');
+});
+
 // Affichage du username sur la page settings
 
 const displayCurrentUser = document.querySelector('.display-current-user');
