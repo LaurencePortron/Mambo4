@@ -114,7 +114,7 @@ a {
   margin-right: 50px;
 }
 
-.score{
+.score {
   padding-right: 20px;
 }
 
@@ -194,8 +194,9 @@ a {
   .theScore {
     font-size: 30px;
   }
-  .scorePlayer2{
-    margin-right : 30px;
-    margin-left : 30px;
+  .scorePlayer2 {
+    margin-right: 30px;
+    margin-left: 30px;
     background-color: blue;
+  }
 }

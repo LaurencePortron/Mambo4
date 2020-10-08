@@ -3,15 +3,23 @@ const homeBody = document.querySelector('.home-body');
 const loginButton = document.querySelector('.login-button');
 const loginJoueur = document.querySelector('#nomJoueur');
 
-loginJoueur.addEventListener('keyup', (e) => {
-  if (e.keyCode === 13) {
-    e.preventDefault();
-    console.log(document.getElementById('nomJoueur').value);
-    // loginBody.style.display = 'none';
-    // homeBody.style.display = 'block';
-    // sessionStorage.setItem('user', document.getElementById('nomJoueur').value);
-  }
-});
+loginBody.addEventListener(
+  'keyup',
+  (event) => {
+    event.preventDefault();
+    console.log(event.keyCode);
+    if (event.keyCode === 13) {
+      console.log(event.keyCode);
+      loginBody.style.display = 'none';
+      homeBody.style.display = 'block';
+      sessionStorage.setItem(
+        'user',
+        document.getElementById('nomJoueur').value
+      );
+    }
+  },
+  false
+);
 
 loginButton.addEventListener('click', function () {
   loginBody.style.display = 'none';
