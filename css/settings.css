@@ -5,21 +5,23 @@
 
 .header-settings {
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .logo-mambo4 {
   width: 80%;
+  margin-top: 20px;
 }
 
 .login {
   border-radius: 24px;
   background-color: #38548c;
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   color: white;
-  padding-top: 30px;
-  padding-bottom: 30px;
-  font-size: 25px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 10px;
 }
 
 .login-desktop {
@@ -28,7 +30,6 @@
 
 .login p {
   margin: 0;
-  margin-top: 25px;
 }
 
 .login-title {
@@ -56,9 +57,9 @@
   background-color: #c0392b;
   border-radius: 24px;
   color: white;
-  padding: 30px;
-  margin-bottom: 30px;
-  font-size: 25px;
+  padding: 20px;
+  margin-bottom: 20px;
+  font-size: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -128,8 +129,8 @@ label:active:after {
   color: white;
   text-align: center;
   padding: 30px;
-  font-size: 25px;
-  margin-bottom: 30px;
+  font-size: 10px;
+  margin-bottom: 20px;
 }
 
 .emojis {
@@ -157,12 +158,12 @@ label:active:after {
 .save {
   padding-left: 20px;
   padding-right: 20px;
-  margin-top: 10px;
+  margin-top: 1px;
   background-color: #f1c40f;
   border-radius: 24px;
   color: #ffffff;
   font-family: 'Sora', sans-serif;
-  font-size: 30px;
+  font-size: 20px;
   border-color: #f1c40f;
   cursor: pointer;
   outline: none;
@@ -177,11 +178,17 @@ label:active:after {
 }
 
 @media screen and (min-width: 768px) {
+  .display-current-user {
+    font-size: 35px;
+  }
   .settings-body {
     padding-left: 80px;
     padding-right: 80px;
   }
 
+  .one-parameter {
+    font-size: 20px;
+  }
   .choose-your-sounds {
     font-size: 35px;
   }
@@ -195,10 +202,16 @@ label:active:after {
     transform: scale(0.9);
     cursor: pointer;
   }
+  .save {
+    font-size: 30px;
+  }
 
   @media screen and (min-width: 1200px) {
     .logo-mambo4 {
       width: 50%;
+    }
+    .display-current-user {
+      font-size: 30px;
     }
 
     .login-desktop:hover {
@@ -209,6 +222,7 @@ label:active:after {
     .login-title-desktop {
       display: inline;
       margin: 0;
+      font-size: 30px;
     }
 
     .login-title {
@@ -264,6 +278,10 @@ label:active:after {
     .emoji-poo:hover {
       transform: scale(0.9);
       cursor: pointer;
+    }
+
+    .save {
+      font-size: 30px;
     }
   }
 }

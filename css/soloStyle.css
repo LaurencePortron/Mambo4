@@ -45,7 +45,7 @@ a {
 }
 
 .play-h1 {
-  font-size: 30px;
+  font-size: 20px;
 }
 
 .touchUp,
@@ -57,7 +57,7 @@ a {
 .carreRouge {
   float: left;
   width: 50%;
-  height: 250px;
+  height: 200px;
   border-top-right-radius: 50px;
   border-bottom-right-radius: 50px;
   background-color: #c0392b;
@@ -67,7 +67,7 @@ a {
 .carreBleu {
   float: right;
   width: 50%;
-  height: 250px;
+  height: 200px;
   border-top-left-radius: 50px;
   border-bottom-left-radius: 50px;
   background-color: #38548c;
@@ -77,30 +77,30 @@ a {
 .carreJaune {
   float: left;
   width: 50%;
-  height: 250px;
+  height: 200px;
   border-top-right-radius: 50px;
   border-bottom-right-radius: 50px;
   background-color: #f1c40f;
   cursor: pointer;
-  margin-bottom: 40px;
+  margin-bottom: 10px;
 }
 
 .carreVert {
   float: right;
   width: 50%;
-  height: 250px;
+  height: 200px;
   border-top-left-radius: 50px;
   border-bottom-left-radius: 50px;
   background-color: #47864a;
   cursor: pointer;
-  margin-bottom: 40px;
+  margin-bottom: 10px;
 }
 .disabled {
   pointer-events: none;
 }
 
 .theScore {
-  width: 100%;
+  width: 50%
   display: flex;
   justify-content: center;
   flex-direction: row;
@@ -115,17 +115,15 @@ a {
   margin-right: 50px;
 }
 
-/* <<<<<<< HEAD */
 .score {
   padding-right: 20px;
+  border-radius: 24px;
 }
-/* ======= */
-/* <<<<<<< HEAD */
+
 .score {
   padding: 20px;
   background-color: #c0392b;
 }
-/* >>>>>>> dev */
 
 .score-button {
   display: inline-block;
@@ -133,34 +131,30 @@ a {
   text-align: center;
   padding-left: 20px;
   padding-right: 20px;
-  margin-top: 20px;
-  margin-bottom: 20px;
   background-color: #f1c40f;
-  /* >>>>>>> 6b74fd14adad5fe3d11339207b9884e3a4e44bbf */
+
   border-radius: 24px;
-  margin-right: 30px;
-  margin-left: 30px;
+
 }
 
 .start {
   padding-left: 20px;
   padding-right: 20px;
-  margin-top: 10px;
+ 
   background-color: #f1c40f;
   border-radius: 24px;
   color: #ffffff;
   font-family: 'Sora', sans-serif;
-  font-size: 30px;
+
   border-color: #f1c40f;
   cursor: pointer;
   outline: none;
-  /* width: 15%;
-  text-align: center; */
 }
 
 .message {
-  height: 50px;
+  height: 10px;
   color: black;
+  font-size: 8px;
 }
 
 .start-message {
@@ -175,6 +169,7 @@ a {
   .message {
     margin-left: 50px;
     margin-right: 50px;
+    font-size: 20px;
   }
 
   .img {
@@ -196,7 +191,7 @@ a {
 
   .carreJaune,
   .carreVert {
-    margin-bottom: 90px;
+    margin-bottom: 20px;
   }
 
   .theScore {
