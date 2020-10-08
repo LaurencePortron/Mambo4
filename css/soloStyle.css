@@ -43,12 +43,12 @@ a {
   cursor: pointer;
 }
 
-.play-h1 {
+/* .play-h1 {
   margin: 0;
   text-align: center;
   font-size: 45px;
   padding: 30px;
-}
+} */
 
 .touchUp,
 .touchDown {
@@ -114,7 +114,7 @@ a {
   margin-right: 50px;
 }
 
-.score {
+.score{
   padding-right: 20px;
 }
 
@@ -135,9 +135,10 @@ a {
 }
 
 .start {
-  padding-left: 40px;
-  padding-right: 40px;
-  margin-top: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
   background-color: #f1c40f;
   border-radius: 24px;
   font-family: 'Sora', sans-serif;
@@ -145,8 +146,8 @@ a {
   cursor: pointer;
   outline: none;
   margin-top: 60px;
-  width: 15%;
-  text-align: center;
+  /* width: 15%;
+  text-align: center; */
 }
 
 .message {
@@ -158,6 +159,8 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-left: 300px;
+  margin-right: 300px;
 }
 
 @media screen and (min-width: 768px) {
@@ -191,4 +194,8 @@ a {
   .theScore {
     font-size: 30px;
   }
+  .scorePlayer2{
+    margin-right : 30px;
+    margin-left : 30px;
+    background-color: blue;
 }
