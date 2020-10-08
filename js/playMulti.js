@@ -92,9 +92,9 @@ function gameTurn() {
     compTurn = false; // on indique que ce n'est pas le tour de l'ordinateur
     clearColor(); // on éteint les couleurs
     if (player1Turn){
-      message.innerHTML = "PLAYER 1 TURN";
+      message.innerHTML = "PLAYER 1";
     } else {
-      message.innerHTML = "PLAYER 2 TURN";
+      message.innerHTML = "PLAYER 2";
     }
     player1Turn = !player1Turn; 
   }
@@ -103,7 +103,7 @@ function gameTurn() {
     // on vérifie que ce soit le tour de l'ordinateur
     clearColor(); // on éteint les couleurs
     setTimeout(() => {
-      message.innerHTML = "COMPUTER TURN";
+      message.innerHTML = "WATCH";
       if (order[nbCompTurn] == 1) rouge(); // si dans la séquence, le 1er chiffre est un 1 on allume le rouge au bout de 200mS
       if (order[nbCompTurn] == 2) bleu();
       if (order[nbCompTurn] == 3) jaune();
