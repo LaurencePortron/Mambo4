@@ -4,26 +4,23 @@
 
 .header {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 .play_button {
-  padding-left: 40px;
-  padding-right: 40px;
-  background-color: #c0392b;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding: 20px;
+  margin-top: 10px;
+  background-color: #f1c40f;
   border-radius: 24px;
-  margin-bottom: 10px;
-  margin-top: 100px;
   color: #ffffff;
   font-family: 'Sora', sans-serif;
-  font-size: 36px;
-  border-color: #c0392b;
+  font-size: 30px;
+  border-color: #f1c40f;
   cursor: pointer;
   outline: none;
-}
-
-.sound-image {
-  width: 30px;
-  height: 30px;
+  margin-bottom: 50px;
+  border-color: transparent;
 }
 
 .score_card {
@@ -50,11 +47,11 @@
 .highscore_case {
   margin-right: 50px;
   margin-left: 50px;
-  height: 40px;
+  height: 55px;
   border-radius: 12px;
 
-  background-color: grey;
-  opacity: 0.3;
+  background-color: #5577ba;
+
   padding: 10px;
   color: #ffffff;
 
@@ -77,11 +74,10 @@
   margin: 5px;
   margin-right: 50px;
   margin-left: 50px;
-  height: 40px;
   border-radius: 12px;
 
-  background-color: grey;
-  opacity: 0.3;
+  background-color: #5577ba;
+
   margin-bottom: 10px;
   padding: 10px;
   color: #ffffff;
@@ -96,15 +92,15 @@
 }
 
 .menu_button {
-  padding-left: 40px;
-  padding-right: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
   margin-top: 10px;
-  background-color: #f1c40f;
+  background-color: #c0392b;
   border-radius: 24px;
   color: #ffffff;
   font-family: 'Sora', sans-serif;
   font-size: 30px;
-  border-color: #f1c40f;
+  border-color: transparent;
   cursor: pointer;
   outline: none;
 }
