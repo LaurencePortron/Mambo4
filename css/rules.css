@@ -18,7 +18,7 @@
   align-items: center;
 }
 img {
-  width: 600px;
+  width: 80%;
 }
 
 .rules {
@@ -29,16 +29,8 @@ img {
   border-radius: 24px;
   color: #ffffff;
   font-family: 'Sora', sans-serif;
-  font-size: 30px;
+  font-size: 15px;
   text-align: center;
-  /* border-radius: 24px;
-  background-color: #38548c;
-  text-align: center;
-  margin-bottom: 30px;
-  color: white;
-  padding-top: 30px;
-  padding-bottom: 30px;
-  font-size: 25px; */
 }
 
 .ruleGame {
@@ -53,22 +45,33 @@ img {
   background-color: #c0392b;
   border-radius: 24px;
   color: white;
-  padding: 30px;
-  margin-bottom: 30px;
-  font-size: 25px;
+  padding: 10px;
+  margin-bottom: 8px;
+  font-size: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+h2 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+  text-align: center;
 }
 
 .goalgame {
   background-color: #47864a;
   border-radius: 24px;
   color: white;
-  text-align: center;
-  padding: 30px;
-  font-size: 25px;
-  margin-bottom: 30px;
+  padding: 10px;
+  margin-bottom: 8px;
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .contener-play {
@@ -92,4 +95,33 @@ img {
 
 .save-link {
   text-decoration: none;
+}
+
+@media screen and (min-width: 650px) {
+  img {
+    width: 50%;
+  }
+
+  .rules {
+    font-size: 20px;
+  }
+  h1 {
+    margin-top: 0px;
+    margin-bottom: 3px;
+  }
+
+  h2 {
+    font-size: 30px;
+  }
+
+  p {
+    font-size: 25px;
+  }
+
+  .rules,
+  .principeGame,
+  .goalgame {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
 }
