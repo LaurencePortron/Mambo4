@@ -6,6 +6,8 @@ const playBody = document.querySelector('.play-body');
 const settingsBody = document.querySelector('.settings-body');
 const scoresBody = document.querySelector('.scores-body');
 
+let soundActive = true;
+
 saveButton.addEventListener('click', function () {
   playBody.style.display = 'block';
   settingsBody.style.display = 'none';
@@ -14,6 +16,28 @@ saveButton.addEventListener('click', function () {
 scoreButton.addEventListener('click', function () {
   scoresBody.style.display = 'block';
   playBody.style.display = 'none';
+});
+
+const imageSoundOnOff = document.querySelector('.sound-image');
+imageSoundOnOff.addEventListener('click', function () {
+  if (imageSoundOnOff.getAttribute('src') == '../images/imgmute.png') {
+    imageSoundOnOff.setAttribute('src', '../images/imgmusic.jpg');
+    soundActive = true;
+  } else {
+    imageSoundOnOff.setAttribute('src', '../images/imgmute.png');
+    soundActive = false;
+  }
+});
+
+const buttonSwitchSound = document.querySelector('#switch-sounds');
+buttonSwitchSound.addEventListener('change', () => {
+  if (buttonSwitchSound.checked) {
+    imageSoundOnOff.setAttribute('src', '../images/imgmusic.jpg');
+    soundActive = true;
+  } else {
+    imageSoundOnOff.setAttribute('src', '../images/imgmute.png');
+    soundActive = false;
+  }
 });
 
 //Gestion du mode increase speed
@@ -55,15 +79,20 @@ const carreVert = document.querySelector('.carreVert');
 const message = document.querySelector('.message');
 const startButton = document.querySelector('.start');
 
+let rougeSound = document.querySelector('.do');
+let vertSound = document.querySelector('.re');
+let bleuSound = document.querySelector('.mi');
+let jauneSound = document.querySelector('.si');
+
 // création d'un écouteur, déclenchant le jeu par un clic sur le bouton start
 
 startButton.addEventListener('click', (event) => {
-  play();
+  gamePlay();
 });
 
 // fonction permettant d'initialiser le jeu
 
-function play() {
+function gamePlay() {
   win = false; // en cas de nouveau jeu après une victoire, on remet la variable win à fausse
   order = []; // idem, on vide le tableau order
   playerOrder = []; // on vide également le tableau playerOrder
@@ -140,8 +169,14 @@ carreRouge.addEventListener('click', (event) => {
   playerOrder.push(1);
   check();
   rouge();
+  if (soundActive) {
+    rougeSound.play();
+  }
   setTimeout(() => {
     clearColor();
+    if (soundActive) {
+      rougeSound.pause();
+    }
   }, 300);
 });
 
@@ -149,8 +184,14 @@ carreBleu.addEventListener('click', (event) => {
   playerOrder.push(2);
   check();
   bleu();
+  if (soundActive) {
+    bleuSound.play();
+  }
   setTimeout(() => {
     clearColor();
+    if (soundActive) {
+      bleuSound.pause();
+    }
   }, 300);
 });
 
@@ -158,8 +199,14 @@ carreJaune.addEventListener('click', (event) => {
   playerOrder.push(3);
   check();
   jaune();
+  if (soundActive) {
+    jauneSound.play();
+  }
   setTimeout(() => {
     clearColor();
+    if (soundActive) {
+      jauneSound.pause();
+    }
   }, 300);
 });
 
@@ -167,8 +214,14 @@ carreVert.addEventListener('click', (event) => {
   playerOrder.push(4);
   check();
   vert();
+  if (soundActive === true) {
+    vertSound.play();
+  }
   setTimeout(() => {
     clearColor();
+    if (soundActive) {
+      vertSound.pause();
+    }
   }, 300);
 });
 
@@ -191,7 +244,7 @@ function check() {
       message.innerHTML = '';
 
       clearColor();
-      play();
+      gamePlay();
     }, 800);
   }
 

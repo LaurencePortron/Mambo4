@@ -15,6 +15,8 @@ const playBody = document.querySelector('.play-body');
 const settingsBody = document.querySelector('.settings-body');
 const scoresBody = document.querySelector('.scores-body');
 
+let soundActive = true;
+
 saveButton.addEventListener('click', function () {
   playBody.style.display = 'block';
   window.scrollTo(0, 0);
@@ -36,11 +38,22 @@ imageSoundOnOff.addEventListener('click', function () {
     soundActive = false;
   }
 });
+
+const buttonSwitchSound = document.querySelector('#switch-sounds');
+buttonSwitchSound.addEventListener('change', () => {
+  if (buttonSwitchSound.checked) {
+    imageSoundOnOff.setAttribute('src', '../images/imgmusic.jpg');
+    soundActive = true;
+  } else {
+    imageSoundOnOff.setAttribute('src', '../images/imgmute.png');
+    soundActive = false;
+  }
+});
+
 //Gestion du mode increase speed
 
 let increaseSpeed = false;
 let speedInterval = 800;
-
 const buttonIncreaseSpeed = document.querySelector('#switch-speed');
 buttonIncreaseSpeed.addEventListener('change', function () {
   if (increaseSpeed == false) {
@@ -62,7 +75,6 @@ let good; // retourne true ou false si le joueur clique sur la bonne ou la mauva
 let compTurn; // true si c'est au tour de l'ordinateur
 let interval;
 let win; // si true, le joueur a gagné
-let soundActive = true;
 let scoreValue = 0;
 let scoresTable = JSON.parse(localStorage.getItem('scoresTable')) || [];
 
@@ -131,22 +143,18 @@ function gameTurn() {
 
 function rouge() {
   carreRouge.style.opacity = '0.7';
-  rougeSound.play();
 }
 
 function bleu() {
   carreBleu.style.opacity = '0.7';
-  bleuSound.play();
 }
 
 function jaune() {
   carreJaune.style.opacity = '0.7';
-  jauneSound.play();
 }
 
 function vert() {
   carreVert.style.opacity = '0.7';
-  vertSound.play();
 }
 
 function clearColor() {
@@ -160,10 +168,14 @@ carreRouge.addEventListener('click', (event) => {
   playerOrder.push(1);
   check();
   rouge();
-  rougeSound.play();
+  if (soundActive) {
+    rougeSound.play();
+  }
   setTimeout(() => {
     clearColor();
-    rougeSound.pause();
+    if (soundActive) {
+      rougeSound.pause();
+    }
   }, 300);
 });
 
@@ -171,10 +183,14 @@ carreBleu.addEventListener('click', (event) => {
   playerOrder.push(2);
   check();
   bleu();
-  bleuSound.play();
+  if (soundActive) {
+    bleuSound.play();
+  }
   setTimeout(() => {
     clearColor();
-    bleuSound.pause();
+    if (soundActive) {
+      bleuSound.pause();
+    }
   }, 300);
 });
 
@@ -182,10 +198,14 @@ carreJaune.addEventListener('click', (event) => {
   playerOrder.push(3);
   check();
   jaune();
-  jauneSound.play();
+  if (soundActive) {
+    jauneSound.play();
+  }
   setTimeout(() => {
     clearColor();
-    jauneSound.pause();
+    if (soundActive) {
+      jauneSound.pause();
+    }
   }, 300);
 });
 
@@ -193,10 +213,14 @@ carreVert.addEventListener('click', (event) => {
   playerOrder.push(4);
   check();
   vert();
-  vertSound.play();
+  if (soundActive === true) {
+    vertSound.play();
+  }
   setTimeout(() => {
     clearColor();
-    vertSound.pause();
+    if (soundActive) {
+      vertSound.pause();
+    }
   }, 300);
 });
 
