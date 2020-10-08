@@ -294,12 +294,12 @@ function addScoreToTable() {
 function showScores() {
   const highestScore = scoresTable[0];
   if (highestScore) {
-    highestScoreCase.innerHTML = `<div class="score_case">${highestScore.user}: ${highestScore.scoreValue}</div>`;
+    highestScoreCase.innerHTML = `<div class="score_case">${highestScore.user}\u00A0\u00A0\u00A0\u00A0 - \u00A0\u00A0\u00A0\u00A0${highestScore.scoreValue}</div>`;
   }
 
   scoresCasesTable.innerHTML = '';
   scoresTable.forEach((value) => {
-    scoresCasesTable.innerHTML += `<div class="score_case">${value.user}: ${value.scoreValue}</div>`;
+    scoresCasesTable.innerHTML += `<div class="score_case">${value.user}\u00A0\u00A0\u00A0\u00A0  - \u00A0\u00A0\u00A0\u00A0   ${value.scoreValue}</div>`;
   });
 }
 

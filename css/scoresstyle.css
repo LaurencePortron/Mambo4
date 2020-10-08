@@ -47,11 +47,11 @@
 .highscore_case {
   margin-right: 50px;
   margin-left: 50px;
-  height: 40px;
+  height: 55px;
   border-radius: 12px;
 
-  background-color: grey;
-  opacity: 0.3;
+  background-color: #5577ba;
+
   padding: 10px;
   color: #ffffff;
 
@@ -74,11 +74,10 @@
   margin: 5px;
   margin-right: 50px;
   margin-left: 50px;
-  height: 40px;
   border-radius: 12px;
 
-  background-color: grey;
-  opacity: 0.3;
+  background-color: #5577ba;
+
   margin-bottom: 10px;
   padding: 10px;
   color: #ffffff;
