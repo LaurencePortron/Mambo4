@@ -23,17 +23,6 @@ imageSoundOnOff.addEventListener('click', function () {
   }
 });
 
-const imageSoundOnOff = document.querySelector('.sound-image');
-imageSoundOnOff.addEventListener('click', function () {
-  if (imageSoundOnOff.getAttribute('src') == '../images/imgmute.png') {
-    imageSoundOnOff.setAttribute('src', '../images/imgmusic.jpg');
-    soundActive = true;
-  } else {
-    imageSoundOnOff.setAttribute('src', '../images/imgmute.png');
-    soundActive = false;
-  }
-});
-
 const buttonSwitchSound = document.querySelector('#switch-sounds');
 buttonSwitchSound.addEventListener('change', () => {
   if (buttonSwitchSound.checked) {
@@ -71,7 +60,6 @@ let good; // retourne true ou false si le joueur clique sur la bonne ou la mauva
 let compTurn; // true si c'est au tour de l'ordinateur
 let interval;
 let win; // si true, le joueur a gagné
-let soundActive = true;
 let player1Turn = true;
 let player1Points = 0;
 let player2Points = 0;
