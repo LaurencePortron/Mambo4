@@ -114,8 +114,10 @@ a {
   margin-right: 50px;
 }
 
-.score {
-  padding-right: 20px;
+<<<<<<< HEAD
+.score{
+  padding: 20px;
+  background-color: #c0392b;
 }
 
 .score-button {
@@ -127,11 +129,10 @@ a {
   margin-top: 20px;
   margin-bottom: 20px;
   background-color: #f1c40f;
+>>>>>>> 6b74fd14adad5fe3d11339207b9884e3a4e44bbf
   border-radius: 24px;
-  font-family: 'Sora', sans-serif;
-  font-size: 25px;
-  cursor: pointer;
-  outline: none;
+  margin-right : 30px;
+  margin-left : 30px;
 }
 
 .start {
@@ -194,9 +195,10 @@ a {
   .theScore {
     font-size: 30px;
   }
-  .scorePlayer2 {
-    margin-right: 30px;
-    margin-left: 30px;
-    background-color: blue;
-  }
+  .scorePlayer2{
+    padding: 20px;
+    margin-right : 30px;
+    margin-left : 30px;
+    background-color: #38548c;
+    border-radius: 24px;
 }

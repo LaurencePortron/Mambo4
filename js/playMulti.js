@@ -1,7 +1,6 @@
 // Gestion de l'affichage des différentes vies
 
 const saveButton = document.querySelector('.save');
-const scoreButton = document.querySelector('.score-button');
 const playBody = document.querySelector('.play-body');
 const settingsBody = document.querySelector('.settings-body');
 const scoresBody = document.querySelector('.scores-body');
@@ -13,9 +12,15 @@ saveButton.addEventListener('click', function () {
   settingsBody.style.display = 'none';
 });
 
-scoreButton.addEventListener('click', function () {
-  scoresBody.style.display = 'block';
-  playBody.style.display = 'none';
+const imageSoundOnOff = document.querySelector('.sound-image');
+imageSoundOnOff.addEventListener('click', function () {
+  if (imageSoundOnOff.getAttribute('src') == '../images/imgmute.png') {
+    imageSoundOnOff.setAttribute('src', '../images/imgmusic.jpg');
+    soundActive = true;
+  } else {
+    imageSoundOnOff.setAttribute('src', '../images/imgmute.png');
+    soundActive = false;
+  }
 });
 
 const imageSoundOnOff = document.querySelector('.sound-image');
@@ -66,6 +71,7 @@ let good; // retourne true ou false si le joueur clique sur la bonne ou la mauva
 let compTurn; // true si c'est au tour de l'ordinateur
 let interval;
 let win; // si true, le joueur a gagné
+let soundActive = true;
 let player1Turn = true;
 let player1Points = 0;
 let player2Points = 0;
@@ -120,10 +126,10 @@ function gameTurn() {
     clearInterval(interval); // on stoppe la fonction
     compTurn = false; // on indique que ce n'est pas le tour de l'ordinateur
     clearColor(); // on éteint les couleurs
-    if (player1Turn) {
-      message.innerHTML = 'PLAYER 1 TURN';
+    if (player1Turn){
+      message.innerHTML = "PLAYER 1";
     } else {
-      message.innerHTML = 'PLAYER 2 TURN';
+      message.innerHTML = "PLAYER 2";
     }
     player1Turn = !player1Turn;
   }
@@ -132,7 +138,7 @@ function gameTurn() {
     // on vérifie que ce soit le tour de l'ordinateur
     clearColor(); // on éteint les couleurs
     setTimeout(() => {
-      message.innerHTML = 'COMPUTER TURN';
+      message.innerHTML = "WATCH";
       if (order[nbCompTurn] == 1) rouge(); // si dans la séquence, le 1er chiffre est un 1 on allume le rouge au bout de 200mS
       if (order[nbCompTurn] == 2) bleu();
       if (order[nbCompTurn] == 3) jaune();
@@ -144,18 +150,22 @@ function gameTurn() {
 
 function rouge() {
   carreRouge.style.opacity = '0.7';
+  rougeSound.play();
 }
 
 function bleu() {
   carreBleu.style.opacity = '0.7';
+  bleuSound.play();
 }
 
 function jaune() {
   carreJaune.style.opacity = '0.7';
+  jauneSound.play();
 }
 
 function vert() {
   carreVert.style.opacity = '0.7';
+  vertSound.play();
 }
 
 function clearColor() {
@@ -306,7 +316,6 @@ soundPoo.addEventListener('click', function () {
   jauneSound = document.querySelector('.pet4');
   soundChosen.classList.add('emoji-default');
 });
-
 // scores js laurence
 let scoreTable = [
   {
