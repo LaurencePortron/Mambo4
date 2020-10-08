@@ -134,7 +134,7 @@ a {
   cursor: pointer;
   transform: scale(1.09);
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 600px) {
   .header {
     display: flex;
     justify-content: center;
