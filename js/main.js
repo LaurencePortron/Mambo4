@@ -215,7 +215,6 @@ function check() {
     setTimeout(() => {
       message.innerHTML = '';
       clearColor();
-      playGame();
     }, 800);
   }
 
@@ -273,25 +272,6 @@ soundPoo.addEventListener('click', function () {
   jauneSound = document.querySelector('.pet4');
   soundChosen.classList.add('emoji-default');
 });
-// scores js laurence
-let scoreTable = [
-  {
-    name: 'lolo',
-    score: '400',
-  },
-  {
-    name: 'amandine',
-    score: '500',
-  },
-];
-
-function compare(a, b) {
-  if (a.score > b.score) {
-    return -1;
-  } else if (b.score < a.score) {
-    return 1;
-  } else return 0;
-}
 
 // When user has won or loose, we add the score to the table
 function addScoreToTable() {
