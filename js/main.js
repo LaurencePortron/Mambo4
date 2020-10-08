@@ -8,6 +8,7 @@ const scoresBody = document.querySelector('.scores-body');
 
 saveButton.addEventListener('click', function () {
   playBody.style.display = 'block';
+  window.scrollTo(0, 0);
   settingsBody.style.display = 'none';
 });
 
@@ -62,20 +63,20 @@ const carreVert = document.querySelector('.carreVert');
 const message = document.querySelector('.message');
 const startButton = document.querySelector('.start');
 
-const rougeSound = document.querySelector('.do');
-const vertSound = document.querySelector('.re');
-const bleuSound = document.querySelector('.mi');
-const jauneSound = document.querySelector('.si');
+let rougeSound = document.querySelector('.do');
+let vertSound = document.querySelector('.re');
+let bleuSound = document.querySelector('.mi');
+let jauneSound = document.querySelector('.si');
 
 // création d'un écouteur, déclenchant le jeu par un clic sur le bouton start
 
 startButton.addEventListener('click', (event) => {
-  play();
+  playGame();
 });
 
 // fonction permettant d'initialiser le jeu
 
-function play() {
+function playGame() {
   win = false; // en cas de nouveau jeu après une victoire, on remet la variable win à fausse
   order = []; // idem, on vide le tableau order
   playerOrder = []; // on vide également le tableau playerOrder
@@ -149,6 +150,7 @@ carreRouge.addEventListener('click', (event) => {
   rougeSound.play();
   setTimeout(() => {
     clearColor();
+    rougeSound.stop();
   }, 300);
 });
 
@@ -159,6 +161,7 @@ carreBleu.addEventListener('click', (event) => {
   bleuSound.play();
   setTimeout(() => {
     clearColor();
+    bleuSound.stop();
   }, 300);
 });
 
@@ -169,6 +172,7 @@ carreJaune.addEventListener('click', (event) => {
   jauneSound.play();
   setTimeout(() => {
     clearColor();
+    jauneSound.stop();
   }, 300);
 });
 
@@ -179,6 +183,7 @@ carreVert.addEventListener('click', (event) => {
   vertSound.play();
   setTimeout(() => {
     clearColor();
+    vertSound.stop();
   }, 300);
 });
 
@@ -196,7 +201,7 @@ function check() {
     setTimeout(() => {
       message.innerHTML = '';
       clearColor();
-      play();
+      playGame();
     }, 800);
   }
 
@@ -228,16 +233,28 @@ const soundPoo = document.querySelector(`.emoji-poo`);
 soundCat.addEventListener('click', function () {
   soundChosen.classList.remove('emoji-default');
   soundChosen = document.querySelector(`.emoji-cat`);
+  rougeSound = document.querySelector('.bouc');
+  vertSound = document.querySelector('.chien');
+  bleuSound = document.querySelector('.chat');
+  jauneSound = document.querySelector('.cheval');
   soundChosen.classList.add('emoji-default');
 });
 soundMusic.addEventListener('click', function () {
   soundChosen.classList.remove('emoji-default');
   soundChosen = document.querySelector(`.emoji-music`);
+  rougeSound = document.querySelector('.do');
+  vertSound = document.querySelector('.re');
+  bleuSound = document.querySelector('.mi');
+  jauneSound = document.querySelector('.si');
   soundChosen.classList.add('emoji-default');
 });
 soundPoo.addEventListener('click', function () {
   soundChosen.classList.remove('emoji-default');
   soundChosen = document.querySelector(`.emoji-poo`);
+  rougeSound = document.querySelector('.pet1');
+  vertSound = document.querySelector('.pet2');
+  bleuSound = document.querySelector('.pet3');
+  jauneSound = document.querySelector('.pet4');
   soundChosen.classList.add('emoji-default');
 });
 // scores js laurence
