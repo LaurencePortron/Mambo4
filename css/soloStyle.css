@@ -5,6 +5,10 @@ body {
   color: #ffffff;
 }
 
+a {
+  text-decoration: none;
+}
+
 .play-body {
   display: none;
 }

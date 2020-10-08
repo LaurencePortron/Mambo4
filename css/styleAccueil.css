@@ -3,6 +3,11 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+.home-body {
+  display: none;
+}
+
 body {
   margin: 0;
   padding: 0;

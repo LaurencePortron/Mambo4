@@ -1,4 +1,13 @@
-// Gestion de l'affichage des différentes vies
+// Affichage du username sur la page settings
+
+const displayCurrentUser = document.querySelector('.display-current-user');
+
+let currentUserName = sessionStorage.user;
+if (currentUserName !== '') {
+  displayCurrentUser.innerHTML = currentUserName;
+}
+
+// Gestion de l'affichage des différentes vues
 
 const saveButton = document.querySelector('.save');
 const scoreButton = document.querySelector('.score-button');
@@ -53,6 +62,8 @@ let compTurn; // true si c'est au tour de l'ordinateur
 let interval;
 let win; // si true, le joueur a gagné
 let soundActive = true;
+let scoreValue = 0;
+let scoresTable = JSON.parse(localStorage.getItem('scoresTable')) || [];
 
 const score = document.querySelector('.score');
 const carreRouge = document.querySelector('.carreRouge');
@@ -61,6 +72,8 @@ const carreJaune = document.querySelector('.carreJaune');
 const carreVert = document.querySelector('.carreVert');
 const message = document.querySelector('.message');
 const startButton = document.querySelector('.start');
+const scoresCasesTable = document.querySelector('.scores_table');
+const highestScoreCase = document.querySelector('.highscore_case');
 
 const rougeSound = document.querySelector('.do');
 const vertSound = document.querySelector('.re');
@@ -192,6 +205,7 @@ function check() {
   }
 
   if (good == false) {
+    addScoreToTable();
     message.innerHTML = 'YOU LOOSE, TRY AGAIN !';
     setTimeout(() => {
       message.innerHTML = '';
@@ -205,34 +219,47 @@ function check() {
     playerOrder = [];
     compTurn = true;
     nbCompTurn = 0;
-    score.innerHTML = 'SCORE : ' + (nbUserTurn * 10 - 10);
+    scoreValue = nbUserTurn * 10 - 10;
+    score.innerHTML = 'SCORE : ' + scoreValue;
     interval = setInterval(gameTurn, speedInterval);
   }
 }
 
 function winGame() {
+  addScoreToTable();
   message.innerHTML = 'YOU WIN !';
   setTimeout(() => {
     message.innerHTML = '';
   }, 2000);
   win = true;
 }
-// scores js laurence
-let scoreTable = [
-  {
-    name: 'lolo',
-    score: '400',
-  },
-  {
-    name: 'amandine',
-    score: '500',
-  },
-];
 
-function compare(a, b) {
-  if (a.score > b.score) {
-    return -1;
-  } else if (b.score < a.score) {
-    return 1;
-  } else return 0;
+// When user has won or loose, we add the score to the table
+function addScoreToTable() {
+  scoresTable.unshift({ user: 'todo', scoreValue });
+  scoresTable.slice(5);
+
+  scoresTable.sort((a, b) => {
+    return b.scoreValue - a.scoreValue;
+  });
+
+  localStorage.setItem('scoresTable', JSON.stringify(scoresTable));
+
+  // New table, so we update the html
+  showScores();
 }
+
+// Update the html with scores
+function showScores() {
+  const highestScore = scoresTable[0];
+  if (highestScore) {
+    highestScoreCase.innerHTML = `<div class="score_case">${highestScore.user}: ${highestScore.scoreValue}</div>`;
+  }
+
+  scoresCasesTable.innerHTML = '';
+  scoresTable.forEach((value) => {
+    scoresCasesTable.innerHTML += `<div class="score_case">${value.user}: ${value.scoreValue}</div>`;
+  });
+}
+
+showScores();
