@@ -49,6 +49,18 @@ buttonSwitchSound.addEventListener('change', () => {
     soundActive = false;
   }
 });
+// Gestion de l'arrivée sur la page via le bouton score
+
+if (sessionStorage.scores == 'true') {
+  settingsBody.style.display = 'none';
+  scoresBody.style.display = 'block';
+  playBody.style.display = 'none';
+  sessionStorage.removeItem('scores');
+} else {
+  settingsBody.style.display = 'block';
+  scoresBody.style.display = 'none';
+  playBody.style.display = 'none';
+}
 
 //Gestion du mode increase speed
 
@@ -239,7 +251,6 @@ function check() {
     setTimeout(() => {
       message.innerHTML = '';
       clearColor();
-      playGame();
     }, 800);
   }
 
@@ -297,25 +308,6 @@ soundPoo.addEventListener('click', function () {
   jauneSound = document.querySelector('.pet4');
   soundChosen.classList.add('emoji-default');
 });
-// scores js laurence
-let scoreTable = [
-  {
-    name: 'lolo',
-    score: '400',
-  },
-  {
-    name: 'amandine',
-    score: '500',
-  },
-];
-
-function compare(a, b) {
-  if (a.score > b.score) {
-    return -1;
-  } else if (b.score < a.score) {
-    return 1;
-  } else return 0;
-}
 
 // When user has won or loose, we add the score to the table
 function addScoreToTable() {
