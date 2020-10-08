@@ -36,6 +36,20 @@ imageSoundOnOff.addEventListener('click', function () {
     soundActive = false;
   }
 });
+
+// Gestion de l'arrivée sur la page via le bouton score
+
+if (sessionStorage.scores == 'true') {
+  settingsBody.style.display = 'none';
+  scoresBody.style.display = 'block';
+  playBody.style.display = 'none';
+  sessionStorage.removeItem('scores');
+} else {
+  settingsBody.style.display = 'block';
+  scoresBody.style.display = 'none';
+  playBody.style.display = 'none';
+}
+
 //Gestion du mode increase speed
 
 let increaseSpeed = false;
