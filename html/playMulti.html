@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../css/soloStyle.css" />
+    <link rel="stylesheet" href="../css/settings.css" />
+    <link rel="stylesheet" href="../css/scoresstyle.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mambo4/Play</title>
+  </head>
+  <body>
+    <!-- Ouverture du body play -->
+    <div class="play-body">
+      <header class="header-play">
+        <div class="triangle-sound">
+          <a href="index.html"><div id="triangle"></div></a>
+          <img
+            class="sound-image"
+            src="../images/imgmusic.jpg"
+            alt="Image sound"
+          />
+        </div>
+        <div class="start-message">
+          <div class="start">
+            <h1 class="play-h1">START</h1>
+          </div>
+          <h1 class="message"></h1>
+        </div>
+      </header>
+      <div class="touchUp">
+        <div class="carreRouge"></div>
+        <div class="carreBleu"></div>
+      </div>
+      <div class="touchDown">
+        <div class="carreJaune"></div>
+        <div class="carreVert"></div>
+      </div>
+      <div class="score-button-and-banner">
+        <div class="theScore">
+          <p class="score">PLAYER 1 SCORE : 0</p>
+          <p class="scorePlayer2">PLAYER 2 SCORE : 0</p>
+          <p class="hightScore">HIGHSCORE : 120</p>
+        </div>
+        <div class="score-button">
+          <p>CLICK HERE TO VIEW SCORES !</p>
+        </div>
+      </div>
+    </div>
+    <!-- Fermeture du body play -->
+    <!-- Ouverture du body settings -->
+    <div class="settings-body">
+      <body>
+        <header class="header-settings">
+          <img
+            class="logo-mambo4"
+            src="../images/logo-mambo4.png"
+            alt="Mambo4's logo"
+          />
+        </header>
+
+        <section class="login">
+          <h1 class=".title">
+            <span class="login-title"> You're logged as </span>
+            <span class="login-title-desktop"> Welcome </span>
+            <span class="current-login">anonymous</span>
+            <span class="login-title-desktop">
+              ! Not you ? Change your pseudo here !
+            </span>
+          </h1>
+          <p class="button-change-login">Change</p>
+        </section>
+
+        <section class="parameters">
+          <div class="one-parameter">
+            <h2 class=".title">Sounds</h2>
+            <input type="checkbox" id="switch-sounds" checked />
+            <label for="switch-sounds">Toggle</label>
+          </div>
+          <div class="one-parameter">
+            <h2 class=".title">Chrono</h2>
+            <input type="checkbox" id="switch-chrono" />
+            <label for="switch-chrono">Toggle</label>
+          </div>
+          <div class="one-parameter">
+            <h2 class=".title">Hard mode</h2>
+            <input type="checkbox" id="switch-hardmode" />
+            <label for="switch-hardmode">Toggle</label>
+          </div>
+          <div class="one-parameter">
+            <h2 class=".title">Increase speed</h2>
+            <input type="checkbox" id="switch-speed" />
+            <label for="switch-speed">Toggle</label>
+          </div>
+        </section>
+
+        <section class="sounds">
+          <h2 class="choose-your-sounds .title">Wanna choose your sounds ?</h2>
+          <div class="emojis">
+            <img class="emoji-cat" src="../images/cat.png" alt="Emoji cat" />
+            <img
+              class="emoji-music"
+              src="../images/music.png"
+              alt="Emoji music"
+            />
+            <img class="emoji-poo" src="../images/poo.png" alt="Emoji poo" />
+          </div>
+        </section>
+
+        <section class="contener-save">
+          <h2 class="save .title">SAVE AND START !</h2>
+        </section>
+        <script src="../js/settings.js"></script>
+      </body>
+    </div>
+    <!-- Fermeture du body settings -->
+    <!-- Ouverture du body scores -->
+    <div class="scores-body">
+      <body>
+        <header class="header">
+          <div></div>
+          <a href="playSolo.html">
+            <button class="play_button">PLAY!</button>
+          </a>
+
+          <img class="sound-image" src="../images/sound.jpg" alt="soundicon" />
+        </header>
+
+        <main class="score_card">
+          <section class="highscore_desktop">
+            <h1 class="highscore">HIGHSCORE</h1>
+            <div class="highscore_case"></div>
+          </section>
+          <section class="scores_desktop">
+            <h1 class="scores">SCORES</h1>
+            <div class="score_case"></div>
+            <div class="score_case"></div>
+            <div class="score_case"></div>
+            <div class="score_case"></div>
+            <div class="score_case"></div>
+            <div class="score_case"></div>
+            <div class="score_case"></div>
+          </section>
+        </main>
+
+        <div class="menu">
+          <a href="index.html">
+            <button class="menu_button">MENU</button>
+          </a>
+        </div>
+      </body>
+    </div>
+    <!-- Fermeture du body scores -->
+    <script src="../js/playMulti.js"></script>
+  </body>
+</html>
