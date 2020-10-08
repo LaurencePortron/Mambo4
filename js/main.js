@@ -291,6 +291,8 @@ function compare(a, b) {
   } else if (b.score < a.score) {
     return 1;
   } else return 0;
+}
+
 // When user has won or loose, we add the score to the table
 function addScoreToTable() {
   scoresTable.unshift({ user: 'todo', scoreValue });
