@@ -114,10 +114,10 @@ function gameTurn() {
     clearInterval(interval); // on stoppe la fonction
     compTurn = false; // on indique que ce n'est pas le tour de l'ordinateur
     clearColor(); // on éteint les couleurs
-    if (player1Turn){
-      message.innerHTML = "PLAYER 1";
+    if (player1Turn) {
+      message.innerHTML = 'PLAYER 1';
     } else {
-      message.innerHTML = "PLAYER 2";
+      message.innerHTML = 'PLAYER 2';
     }
     player1Turn = !player1Turn;
   }
@@ -126,7 +126,7 @@ function gameTurn() {
     // on vérifie que ce soit le tour de l'ordinateur
     clearColor(); // on éteint les couleurs
     setTimeout(() => {
-      message.innerHTML = "WATCH";
+      message.innerHTML = 'WATCH';
       if (order[nbCompTurn] == 1) rouge(); // si dans la séquence, le 1er chiffre est un 1 on allume le rouge au bout de 200mS
       if (order[nbCompTurn] == 2) bleu();
       if (order[nbCompTurn] == 3) jaune();
@@ -138,22 +138,30 @@ function gameTurn() {
 
 function rouge() {
   carreRouge.style.opacity = '0.7';
-  rougeSound.play();
+  if (soundActive) {
+    rougeSound.play();
+  }
 }
 
 function bleu() {
   carreBleu.style.opacity = '0.7';
-  bleuSound.play();
+  if (soundActive) {
+    bleuSound.play();
+  }
 }
 
 function jaune() {
   carreJaune.style.opacity = '0.7';
-  jauneSound.play();
+  if (soundActive) {
+    jauneSound.play();
+  }
 }
 
 function vert() {
   carreVert.style.opacity = '0.7';
-  vertSound.play();
+  if (soundActive) {
+    vertSound.play();
+  }
 }
 
 function clearColor() {

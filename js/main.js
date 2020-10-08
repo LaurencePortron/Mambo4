@@ -163,18 +163,30 @@ function gameTurn() {
 
 function rouge() {
   carreRouge.style.opacity = '0.7';
+  if (soundActive) {
+    rougeSound.play();
+  }
 }
 
 function bleu() {
   carreBleu.style.opacity = '0.7';
+  if (soundActive) {
+    bleuSound.play();
+  }
 }
 
 function jaune() {
   carreJaune.style.opacity = '0.7';
+  if (soundActive) {
+    jauneSound.play();
+  }
 }
 
 function vert() {
   carreVert.style.opacity = '0.7';
+  if (soundActive) {
+    vertSound.play();
+  }
 }
 
 function clearColor() {
