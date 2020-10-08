@@ -22,9 +22,11 @@ img {
 }
 
 .rules {
-  padding-left: 20px;
-  padding-right: 20px;
+  padding: 10px;
+  /* padding-left: 20px;
+  padding-right: 20px; */
   margin-top: 10px;
+  margin-bottom: 10px;
   background-color: #38548c;
   border-radius: 24px;
   color: #ffffff;
@@ -58,7 +60,7 @@ h2 {
 }
 
 p {
-  margin: 0;
+  margin-top: 10px;
   text-align: center;
 }
 
