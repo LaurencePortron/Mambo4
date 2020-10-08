@@ -3,12 +3,19 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+html {
+  overflow-y: hidden;
+}
 body {
   margin: 0;
   padding: 0;
   font-family: 'Sora', sans-serif;
 }
 
+h1 {
+  text-align: center;
+}
 .login-body {
   display: flex;
   justify-content: center;
@@ -19,7 +26,8 @@ body {
 .sectionName {
   top: 200px;
   left: 60px;
-  width: 500px;
+  width: 400px;
+  margin-bottom: 80px;
   border: solid 5px white;
   background-color: #38548c;
   display: flex;
@@ -53,4 +61,11 @@ body {
   border-radius: 45px;
   border-width: 0px;
   font-weight: bold;
+}
+
+@media screen and (min-width: 400px) {
+  .sectionName {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
