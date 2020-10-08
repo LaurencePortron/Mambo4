@@ -16,6 +16,11 @@ header img {
   width: 80%;
 }
 
+em{
+  font-style: italic;
+  font-size: .7em;
+}
+
 h1 {
   background-color: #f1c40f;
   text-align: center;
@@ -55,15 +60,14 @@ a:visited {
 article {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
   margin-top: 20px;
   margin-bottom: 20px;
   z-index: 1;
-  justify-content: center;
-  align-items: center;
 }
 
 article h2 {
-  border: 5px solid black;
   width: 85%;
   height: 250px;
   margin: auto;
@@ -104,6 +108,11 @@ article h2 {
   background-color: #ff8333;
   border-radius: 24px;
   color: white;
+}
+
+.italic{
+  font-style: italic  ;
+  font-size: em;
 }
 
 article div{

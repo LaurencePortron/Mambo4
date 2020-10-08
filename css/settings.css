@@ -189,6 +189,12 @@ label:active:after {
   .login-title {
     font-size: 35px;
   }
+  .emoji-cat:hover,
+  .emoji-music:hover,
+  .emoji-poo:hover {
+    transform: scale(0.9);
+    cursor: pointer;
+  }
 
   @media screen and (min-width: 1200px) {
     .logo-mambo4 {
