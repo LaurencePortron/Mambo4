@@ -105,8 +105,12 @@ let vertSound = document.querySelector('.re');
 let bleuSound = document.querySelector('.mi');
 let jauneSound = document.querySelector('.si');
 
-// création d'un écouteur, déclenchant le jeu par un clic sur le bouton start
+carreRouge.classList.add('disabled');
+carreBleu.classList.add('disabled');
+carreJaune.classList.add('disabled');
+carreVert.classList.add('disabled');
 
+// création d'un écouteur, déclenchant le jeu par un clic sur le bouton start
 startButton.addEventListener('click', (event) => {
   playGame();
 });
@@ -136,13 +140,25 @@ function gameTurn() {
   if (nbCompTurn == nbUserTurn) {
     // on compare le nb de tours de l'utilisateur à celui de l'ordinateur
     clearInterval(interval); // on stoppe la fonction
-    compTurn = false; // on indique que ce n'est pas le tour de l'ordinateur
+    compTurn = false; // on indique que ce n'est pas le tour de l'
+    message.innerHTML = 'PLAY!';
     clearColor(); // on éteint les couleurs
+
+    carreRouge.classList.remove('disabled');
+    carreBleu.classList.remove('disabled');
+    carreJaune.classList.remove('disabled');
+    carreVert.classList.remove('disabled');
   }
 
   if (compTurn) {
     // on vérifie que ce soit le tour de l'ordinateur
+    message.innerHTML = 'WATCH!';
     clearColor(); // on éteint les couleurs
+
+    carreRouge.classList.add('disabled');
+    carreBleu.classList.add('disabled');
+    carreJaune.classList.add('disabled');
+    carreVert.classList.add('disabled');
     setTimeout(() => {
       if (order[nbCompTurn] == 1) rouge(); // si dans la séquence, le 1er chiffre est un 1 on allume le rouge au bout de 200mS
       if (order[nbCompTurn] == 2) bleu();
@@ -155,18 +171,30 @@ function gameTurn() {
 
 function rouge() {
   carreRouge.style.opacity = '0.7';
+  if (soundActive) {
+    rougeSound.play();
+  }
 }
 
 function bleu() {
   carreBleu.style.opacity = '0.7';
+  if (soundActive) {
+    bleuSound.play();
+  }
 }
 
 function jaune() {
   carreJaune.style.opacity = '0.7';
+  if (soundActive) {
+    jauneSound.play();
+  }
 }
 
 function vert() {
   carreVert.style.opacity = '0.7';
+  if (soundActive) {
+    vertSound.play();
+  }
 }
 
 function clearColor() {
@@ -248,6 +276,11 @@ function check() {
   if (good == false) {
     addScoreToTable();
     message.innerHTML = 'YOU LOOSE, TRY AGAIN !';
+
+    carreRouge.classList.add('disabled');
+    carreBleu.classList.add('disabled');
+    carreJaune.classList.add('disabled');
+    carreVert.classList.add('disabled');
     setTimeout(() => {
       message.innerHTML = '';
       clearColor();
