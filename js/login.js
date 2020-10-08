@@ -7,9 +7,7 @@ loginBody.addEventListener(
   'keyup',
   (event) => {
     event.preventDefault();
-    console.log(event.keyCode);
     if (event.keyCode === 13) {
-      console.log(event.keyCode);
       loginBody.style.display = 'none';
       homeBody.style.display = 'block';
       sessionStorage.setItem(
