@@ -38,11 +38,11 @@ scoreButton.addEventListener('click', function () {
 
 const imageSoundOnOff = document.querySelector('.sound-image');
 imageSoundOnOff.addEventListener('click', function () {
-  if (imageSoundOnOff.getAttribute('src') == '../images/imgmute.png') {
-    imageSoundOnOff.setAttribute('src', '../images/imgmusic.jpg');
+  if (imageSoundOnOff.getAttribute('src') == 'images/imgmute.png') {
+    imageSoundOnOff.setAttribute('src', 'images/imgmusic.jpg');
     soundActive = true;
   } else {
-    imageSoundOnOff.setAttribute('src', '../images/imgmute.png');
+    imageSoundOnOff.setAttribute('src', 'images/imgmute.png');
     soundActive = false;
   }
 });
@@ -50,10 +50,10 @@ imageSoundOnOff.addEventListener('click', function () {
 const buttonSwitchSound = document.querySelector('#switch-sounds');
 buttonSwitchSound.addEventListener('change', () => {
   if (buttonSwitchSound.checked) {
-    imageSoundOnOff.setAttribute('src', '../images/imgmusic.jpg');
+    imageSoundOnOff.setAttribute('src', 'images/imgmusic.jpg');
     soundActive = true;
   } else {
-    imageSoundOnOff.setAttribute('src', '../images/imgmute.png');
+    imageSoundOnOff.setAttribute('src', 'images/imgmute.png');
     soundActive = false;
   }
 });
