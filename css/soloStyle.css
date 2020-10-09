@@ -17,7 +17,6 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-
   margin: 10px;
 }
 
@@ -99,6 +98,7 @@ a {
   cursor: pointer;
   margin-bottom: 10px;
 }
+
 .disabled {
   pointer-events: none;
 }
@@ -117,7 +117,6 @@ a {
   padding-right: 30px;
   padding-top: 15px;
   padding-bottom: 15px;
-
   border-radius: 24px;
   background-color: #c0392b;
 }
@@ -127,7 +126,6 @@ a {
   padding-right: 30px;
   padding-top: 15px;
   padding-bottom: 15px;
-
   border-radius: 24px;
   background-color: #47864a;
 }
@@ -139,19 +137,17 @@ a {
   padding-left: 20px;
   padding-right: 20px;
   background-color: #f1c40f;
-
   border-radius: 24px;
+  cursor: pointer;
 }
 
 .start {
   padding-left: 20px;
   padding-right: 20px;
-
   background-color: #f1c40f;
   border-radius: 24px;
   color: #ffffff;
   font-family: 'Sora', sans-serif;
-
   border-color: #f1c40f;
   cursor: pointer;
   outline: none;
@@ -160,15 +156,14 @@ a {
 .message {
   height: 10px;
   color: black;
-  font-size: 8px;
+  font-size: 15px;
 }
 
 .start-message {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-left: 300px;
-  margin-right: 300px;
+  margin-bottom: 20px;
 }
 
 .score-button-and-banner {
