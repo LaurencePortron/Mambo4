@@ -100,29 +100,32 @@ a {
 }
 
 .theScore {
-  width: 50%
   display: flex;
   justify-content: center;
   flex-direction: row;
   font-weight: bold;
-  background-color: #47864a;
-  border-radius: 24px;
-}
-
-.score-button-and-banner {
-  text-align: center;
-  margin-left: 50px;
-  margin-right: 50px;
+  font-size: 16px;
+  word-spacing: 3px;
 }
 
 .score {
-  padding-right: 20px;
-  border-radius: 24px;
-}
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 15px;
+  padding-bottom: 15px;
 
-.score {
-  padding: 20px;
+  border-radius: 24px;
   background-color: #c0392b;
+}
+
+.scorePlayer2 {
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+
+  border-radius: 24px;
+  background-color: #47864a;
 }
 
 .score-button {
@@ -134,13 +137,12 @@ a {
   background-color: #f1c40f;
 
   border-radius: 24px;
-
 }
 
 .start {
   padding-left: 20px;
   padding-right: 20px;
- 
+
   background-color: #f1c40f;
   border-radius: 24px;
   color: #ffffff;
@@ -195,7 +197,7 @@ a {
   }
 
   .theScore {
-    font-size: 30px;
+    font-size: 20px;
   }
 
   .start-message {
@@ -204,11 +206,15 @@ a {
   .start {
     margin: auto;
   }
+
+  .score {
+    padding-top: 20px;
+  }
   .scorePlayer2 {
     padding: 20px;
     margin-right: 30px;
     margin-left: 30px;
-    background-color: #38548c;
+    background-color: #47864a;
     border-radius: 24px;
   }
 }
