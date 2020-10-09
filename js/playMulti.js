@@ -1,55 +1,3 @@
-// Gestion de l'affichage des différentes vies
-
-const saveButton = document.querySelector('.save');
-const playBody = document.querySelector('.play-body');
-const settingsBody = document.querySelector('.settings-body');
-const scoresBody = document.querySelector('.scores-body');
-
-let soundActive = true;
-
-saveButton.addEventListener('click', function () {
-  playBody.style.display = 'block';
-  settingsBody.style.display = 'none';
-});
-
-const imageSoundOnOff = document.querySelector('.sound-image');
-imageSoundOnOff.addEventListener('click', function () {
-  if (imageSoundOnOff.getAttribute('src') == '../images/imgmute.png') {
-    imageSoundOnOff.setAttribute('src', '../images/imgmusic.jpg');
-    soundActive = true;
-  } else {
-    imageSoundOnOff.setAttribute('src', '../images/imgmute.png');
-    soundActive = false;
-  }
-});
-
-const buttonSwitchSound = document.querySelector('#switch-sounds');
-buttonSwitchSound.addEventListener('change', () => {
-  if (buttonSwitchSound.checked) {
-    imageSoundOnOff.setAttribute('src', '../images/imgmusic.jpg');
-    soundActive = true;
-  } else {
-    imageSoundOnOff.setAttribute('src', '../images/imgmute.png');
-    soundActive = false;
-  }
-});
-
-//Gestion du mode increase speed
-
-let increaseSpeed = false;
-let speedInterval = 800;
-
-const buttonIncreaseSpeed = document.querySelector('#switch-speed');
-buttonIncreaseSpeed.addEventListener('change', function () {
-  if (increaseSpeed == false) {
-    increaseSpeed = true;
-    speedInterval = 400;
-  } else {
-    increaseSpeed = false;
-    speedInterval = 800;
-  }
-});
-
 // Variables
 
 let order = []; // on va stocker dans cette variable la séquence de 20 couleurs
@@ -63,6 +11,8 @@ let win; // si true, le joueur a gagné
 let player1Turn = true;
 let player1Points = 0;
 let player2Points = 0;
+let soundDefault = 'music';
+let soundChosen = document.querySelector(`.emoji-${soundDefault}`);
 
 const score = document.querySelector('.score');
 const scorePlayer2 = document.querySelector('.scorePlayer2');
@@ -72,11 +22,63 @@ const carreJaune = document.querySelector('.carreJaune');
 const carreVert = document.querySelector('.carreVert');
 const message = document.querySelector('.message');
 const startButton = document.querySelector('.start');
+const saveButton = document.querySelector('.save');
+const playBody = document.querySelector('.play-body');
+const settingsBody = document.querySelector('.settings-body');
+const scoresBody = document.querySelector('.scores-body');
+const imageSoundOnOff = document.querySelector('.sound-image');
+const buttonSwitchSound = document.querySelector('#switch-sounds');
+const buttonIncreaseSpeed = document.querySelector('#switch-speed');
+const soundCat = document.querySelector(`.emoji-cat`);
+const soundMusic = document.querySelector(`.emoji-music`);
+const soundPoo = document.querySelector(`.emoji-poo`);
 
 let rougeSound = document.querySelector('.do');
 let vertSound = document.querySelector('.re');
 let bleuSound = document.querySelector('.mi');
 let jauneSound = document.querySelector('.si');
+let soundActive = true;
+let increaseSpeed = false;
+let speedInterval = 800;
+
+// Gestion de l'affichage des différentes vies
+
+saveButton.addEventListener('click', function () {
+  playBody.style.display = 'block';
+  settingsBody.style.display = 'none';
+});
+
+imageSoundOnOff.addEventListener('click', function () {
+  if (imageSoundOnOff.getAttribute('src') == '../images/imgmute.png') {
+    imageSoundOnOff.setAttribute('src', '../images/imgmusic.jpg');
+    soundActive = true;
+  } else {
+    imageSoundOnOff.setAttribute('src', '../images/imgmute.png');
+    soundActive = false;
+  }
+});
+
+buttonSwitchSound.addEventListener('change', () => {
+  if (buttonSwitchSound.checked) {
+    imageSoundOnOff.setAttribute('src', '../images/imgmusic.jpg');
+    soundActive = true;
+  } else {
+    imageSoundOnOff.setAttribute('src', '../images/imgmute.png');
+    soundActive = false;
+  }
+});
+
+//Gestion du mode increase speed
+
+buttonIncreaseSpeed.addEventListener('change', function () {
+  if (increaseSpeed == false) {
+    increaseSpeed = true;
+    speedInterval = 400;
+  } else {
+    increaseSpeed = false;
+    speedInterval = 800;
+  }
+});
 
 carreRouge.classList.add('disabled');
 carreBleu.classList.add('disabled');
@@ -281,12 +283,7 @@ function winGame() {
 }
 
 // choix du type de son
-let soundDefault = 'music';
-let soundChosen = document.querySelector(`.emoji-${soundDefault}`);
 soundChosen.classList.add('emoji-default');
-const soundCat = document.querySelector(`.emoji-cat`);
-const soundMusic = document.querySelector(`.emoji-music`);
-const soundPoo = document.querySelector(`.emoji-poo`);
 soundCat.addEventListener('click', function () {
   soundChosen.classList.remove('emoji-default');
   soundChosen = document.querySelector(`.emoji-cat`);
@@ -314,33 +311,3 @@ soundPoo.addEventListener('click', function () {
   jauneSound = document.querySelector('.pet4');
   soundChosen.classList.add('emoji-default');
 });
-// scores js laurence
-let scoreTable = [
-  {
-    name: 'lolo',
-    score: '400',
-  },
-  {
-    name: 'amandine',
-    score: '500',
-  },
-];
-
-function compare(a, b) {
-  if (a.score > b.score) {
-    return -1;
-  } else if (b.score < a.score) {
-    return 1;
-  } else return 0;
-}
-
-let sortedScoreTable = scoreTable.sort(compare);
-console.log(sortedScoreTable);
-
-for (let i = 0; i < sortedScoreTable.length; i++) {
-  const scoreCase = document.querySelector('.score_case');
-  scoreCase.innerHTML += `
-  <div><td>${sortedScoreTable[i].name}</td>
-  <td>${sortedScoreTable[i].score}</td></div>
- `;
-}
