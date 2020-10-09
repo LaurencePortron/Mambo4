@@ -102,7 +102,7 @@ function gamePlay() {
   scorePlayer2.innerHTML = 'PLAYER 2 SCORE : 0'; // on remet le score à 0
   good = true; // on remet good à true si le joueur avait fait une erreur
 
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 10; i++) {
     // cette boucle va créer un tableau de 20 chiffres compris entre 1 et 4
     order.push(Math.floor(Math.random() * 4) + 1);
   }
@@ -194,9 +194,6 @@ carreRouge.addEventListener('click', (event) => {
   }
   setTimeout(() => {
     clearColor();
-    if (soundActive) {
-      rougeSound.pause();
-    }
   }, 300);
 });
 
@@ -209,9 +206,6 @@ carreBleu.addEventListener('click', (event) => {
   }
   setTimeout(() => {
     clearColor();
-    if (soundActive) {
-      bleuSound.pause();
-    }
   }, 300);
 });
 
@@ -224,9 +218,6 @@ carreJaune.addEventListener('click', (event) => {
   }
   setTimeout(() => {
     clearColor();
-    if (soundActive) {
-      jauneSound.pause();
-    }
   }, 300);
 });
 
@@ -239,9 +230,6 @@ carreVert.addEventListener('click', (event) => {
   }
   setTimeout(() => {
     clearColor();
-    if (soundActive) {
-      vertSound.pause();
-    }
   }, 300);
 });
 
@@ -250,7 +238,7 @@ function check() {
     good = false;
   }
 
-  if (playerOrder.length == 20 && good) {
+  if (playerOrder.length == 10 && good) {
     winGame();
   }
 
