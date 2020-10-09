@@ -1,6 +1,50 @@
-// Gestion du changement de login
+// Variables
 
+const score = document.querySelector('.score');
+const carreRouge = document.querySelector('.carreRouge');
+const carreBleu = document.querySelector('.carreBleu');
+const carreJaune = document.querySelector('.carreJaune');
+const carreVert = document.querySelector('.carreVert');
+const message = document.querySelector('.message');
+const startButton = document.querySelector('.start');
+const scoresCasesTable = document.querySelector('.scores_table');
+const highestScoreCase = document.querySelector('.highscore_case');
 const changeLogin = document.querySelector('.login');
+const displayCurrentUser = document.querySelector('.display-current-user');
+const saveButton = document.querySelector('.save');
+const scoreButton = document.querySelector('.score-button');
+const playBody = document.querySelector('.play-body');
+const settingsBody = document.querySelector('.settings-body');
+const scoresBody = document.querySelector('.scores-body');
+const imageSoundOnOff = document.querySelector('.sound-image');
+const buttonSwitchSound = document.querySelector('#switch-sounds');
+const buttonIncreaseSpeed = document.querySelector('#switch-speed');
+const soundCat = document.querySelector(`.emoji-cat`);
+const soundMusic = document.querySelector(`.emoji-music`);
+const soundPoo = document.querySelector(`.emoji-poo`);
+
+let rougeSound = document.querySelector('.do');
+let vertSound = document.querySelector('.re');
+let bleuSound = document.querySelector('.mi');
+let jauneSound = document.querySelector('.si');
+let order = []; // on va stocker dans cette variable la séquence de 20 couleurs
+let playerOrder = []; // liste des couleurs sur lesquelles le joueur a cliqué
+let nbCompTurn; // nombre de tour qu'a joué l'ordinateur
+let nbUserTurn; // tour actuel
+let good; // retourne true ou false si le joueur clique sur la bonne ou la mauvaise couleur
+let compTurn; // true si c'est au tour de l'ordinateur
+let interval;
+let win; // si true, le joueur a gagné
+let scoreValue = 0;
+let scoresTable = JSON.parse(localStorage.getItem('scoresTable')) || [];
+let currentUserName = sessionStorage.user;
+let soundActive = true;
+let increaseSpeed = false;
+let speedInterval = 800;
+let soundDefault = 'music';
+let soundChosen = document.querySelector(`.emoji-${soundDefault}`);
+
+// Gestion du changement de login
 
 changeLogin.addEventListener('click', function () {
   sessionStorage.removeItem('user');
@@ -8,22 +52,11 @@ changeLogin.addEventListener('click', function () {
 
 // Affichage du username sur la page settings
 
-const displayCurrentUser = document.querySelector('.display-current-user');
-
-let currentUserName = sessionStorage.user;
 if (currentUserName !== '') {
   displayCurrentUser.innerHTML = currentUserName;
 }
 
 // Gestion de l'affichage des différentes vues
-
-const saveButton = document.querySelector('.save');
-const scoreButton = document.querySelector('.score-button');
-const playBody = document.querySelector('.play-body');
-const settingsBody = document.querySelector('.settings-body');
-const scoresBody = document.querySelector('.scores-body');
-
-let soundActive = true;
 
 saveButton.addEventListener('click', function () {
   playBody.style.display = 'block';
@@ -36,7 +69,6 @@ scoreButton.addEventListener('click', function () {
   playBody.style.display = 'none';
 });
 
-const imageSoundOnOff = document.querySelector('.sound-image');
 imageSoundOnOff.addEventListener('click', function () {
   if (imageSoundOnOff.getAttribute('src') == 'images/imgmute.png') {
     imageSoundOnOff.setAttribute('src', 'images/imgmusic.jpg');
@@ -47,7 +79,6 @@ imageSoundOnOff.addEventListener('click', function () {
   }
 });
 
-const buttonSwitchSound = document.querySelector('#switch-sounds');
 buttonSwitchSound.addEventListener('change', () => {
   if (buttonSwitchSound.checked) {
     imageSoundOnOff.setAttribute('src', 'images/imgmusic.jpg');
@@ -72,9 +103,6 @@ if (sessionStorage.scores == 'true') {
 
 //Gestion du mode increase speed
 
-let increaseSpeed = false;
-let speedInterval = 800;
-const buttonIncreaseSpeed = document.querySelector('#switch-speed');
 buttonIncreaseSpeed.addEventListener('change', function () {
   if (increaseSpeed == false) {
     increaseSpeed = true;
@@ -84,34 +112,6 @@ buttonIncreaseSpeed.addEventListener('change', function () {
     speedInterval = 800;
   }
 });
-
-// Variables
-
-let order = []; // on va stocker dans cette variable la séquence de 20 couleurs
-let playerOrder = []; // liste des couleurs sur lesquelles le joueur a cliqué
-let nbCompTurn; // nombre de tour qu'a joué l'ordinateur
-let nbUserTurn; // tour actuel
-let good; // retourne true ou false si le joueur clique sur la bonne ou la mauvaise couleur
-let compTurn; // true si c'est au tour de l'ordinateur
-let interval;
-let win; // si true, le joueur a gagné
-let scoreValue = 0;
-let scoresTable = JSON.parse(localStorage.getItem('scoresTable')) || [];
-
-const score = document.querySelector('.score');
-const carreRouge = document.querySelector('.carreRouge');
-const carreBleu = document.querySelector('.carreBleu');
-const carreJaune = document.querySelector('.carreJaune');
-const carreVert = document.querySelector('.carreVert');
-const message = document.querySelector('.message');
-const startButton = document.querySelector('.start');
-const scoresCasesTable = document.querySelector('.scores_table');
-const highestScoreCase = document.querySelector('.highscore_case');
-
-let rougeSound = document.querySelector('.do');
-let vertSound = document.querySelector('.re');
-let bleuSound = document.querySelector('.mi');
-let jauneSound = document.querySelector('.si');
 
 carreRouge.classList.add('disabled');
 carreBleu.classList.add('disabled');
@@ -304,12 +304,9 @@ function winGame() {
 }
 
 // choix du type de son
-let soundDefault = 'music';
-let soundChosen = document.querySelector(`.emoji-${soundDefault}`);
+
 soundChosen.classList.add('emoji-default');
-const soundCat = document.querySelector(`.emoji-cat`);
-const soundMusic = document.querySelector(`.emoji-music`);
-const soundPoo = document.querySelector(`.emoji-poo`);
+
 soundCat.addEventListener('click', function () {
   soundChosen.classList.remove('emoji-default');
   soundChosen = document.querySelector(`.emoji-cat`);
