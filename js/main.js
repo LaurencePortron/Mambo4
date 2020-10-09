@@ -341,7 +341,7 @@ soundPoo.addEventListener('click', function () {
 // When the player won or lost, we add the score to the table
 function addScoreToTable() {
   scoresTable.unshift({ user: currentUserName, scoreValue });
-  scoresTable.slice(5);
+  //scoresTable.slice(5);
 
   scoresTable.sort((a, b) => {
     return b.scoreValue - a.scoreValue;
@@ -361,7 +361,7 @@ function showScores() {
   }
 
   scoresCasesTable.innerHTML = '';
-  scoresTable.forEach((value) => {
+  scoresTable.slice(0, 10).forEach((value) => {
     scoresCasesTable.innerHTML += `<div class="score_case">${value.user}\u00A0\u00A0\u00A0\u00A0  - \u00A0\u00A0\u00A0\u00A0   ${value.scoreValue}</div>`;
   });
 }
