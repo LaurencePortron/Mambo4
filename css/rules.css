@@ -102,6 +102,7 @@ p {
 @media screen and (min-width: 650px) {
   img {
     width: 50%;
+    margin-top: 10px;
   }
 
   .rules {
